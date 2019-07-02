@@ -1,17 +1,14 @@
 import React from 'react';
-import Grid from "@material-ui/core/Grid";
-import Avatar from "@material-ui/core/Avatar"
-import Typography from "@material-ui/core/Typography";
-import {Container, Paper} from "@material-ui/core";
+import {Container, Paper, Typography, Avatar, Grid, Button} from "@material-ui/core";
 
 
 import withStyles from "@material-ui/core/styles/withStyles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 
 
 import "./header.css"
 import logo from "./images/logo.jpeg";
 import layer from "./images/overlay.png";
-import makeStyles from "@material-ui/core/styles/makeStyles";
 
 
 const BigAvatar = withStyles({
@@ -32,7 +29,7 @@ const linearBackground = makeStyles({
 function App() {
     const backgroundClasses = linearBackground();
     return (
-        <Container style={{flexGrow: 1, minHeight: "100vh", minWidth: "100vw"}} className={backgroundClasses.root}>
+        <Container style={{flexGrow: 1, minHeight: "100vh", minWidth: "100vw", fontFamily: "'Source Sans Pro', sans-serif"}} className={backgroundClasses.root}>
             <Grid
                 container
                 spacing={0}
@@ -45,13 +42,13 @@ function App() {
                     </Grid>
 
                     <Grid item>
-                        <Typography variant="h3" style={{color: "white"}}>
+                        <Typography variant="h3" style={{color: "white", fontFamily: "inherit"}}>
                             Huseyin Caliskan
                         </Typography>
                     </Grid>
 
                     <Grid item style={{paddingBottom: "10vh"}}>
-                        <Typography variant="subtitle1" style={{color: "white"}}>
+                        <Typography variant="subtitle1" style={{color: "white", fontFamily: "inherit"}}>
                             <p>
                                 Just an ordinary Software Engineer
                             </p>
@@ -64,8 +61,36 @@ function App() {
                 container
                 spacing={0}
                 justify="center"
-
             >
+                <Grid item xl={9} lg={10} md align="center">
+                    <Paper xs={5} style={{backgroundColor: "#f7f7f7"}}>
+                        <Grid container justify="center" spacing={2} direction="row">
+                            <Grid item>
+                                <Button>
+                                    Introduction
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button>
+                                    First Section
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button>
+                                    Second Section
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button>
+                                    Last Section
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Paper>
+                </Grid>
+                <Paper>
+
+                </Paper>
             </Grid>
         </Container>
     );
