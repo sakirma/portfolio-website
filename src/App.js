@@ -19,17 +19,31 @@ const BigAvatar = withStyles({
     }
 })(Avatar);
 
+const PaperHeader = withStyles({
+    rounded: {
+        borderRadius: '4px 4px 0 0',
+    },
+})(Paper);
+
+const ButtonHeader = withStyles({
+    root: {
+        fontFamily: "'Source Sans Pro', sans-serif",
+        fontWeight: 'bold'
+    }
+})(Button);
 
 const linearBackground = makeStyles({
     root: {
-        backgroundImage: 'url(' + layer +') ,linear-gradient(45deg, #e37682 15%, #5f4d93 85%)',
+        backgroundImage: 'url(' + layer + ') ,linear-gradient(45deg, #e37682 15%, #5f4d93 85%)',
     }
 });
 
 function App() {
     const backgroundClasses = linearBackground();
     return (
-        <Container style={{flexGrow: 1, minHeight: "100vh", minWidth: "100vw", fontFamily: "'Source Sans Pro', sans-serif"}} className={backgroundClasses.root}>
+        <Container
+            style={{flexGrow: 1, minHeight: "100vh", minWidth: "100%", fontFamily: "'Source Sans Pro', sans-serif"}}
+            className={backgroundClasses.root}>
             <Grid
                 container
                 spacing={0}
@@ -63,34 +77,39 @@ function App() {
                 justify="center"
             >
                 <Grid item xl={9} lg={10} md align="center">
-                    <Paper xs={5} style={{backgroundColor: "#f7f7f7"}}>
+                    <PaperHeader xs={5} elevation={0} style={{backgroundColor: "#f7f7f7", paddingTop: '16px', paddingBottom: '16px', fontFamily: 'inherit'}}>
                         <Grid container justify="center" spacing={2} direction="row">
                             <Grid item>
-                                <Button>
+                                <ButtonHeader>
                                     Introduction
-                                </Button>
+                                </ButtonHeader>
                             </Grid>
                             <Grid item>
-                                <Button>
+                                <ButtonHeader>
                                     First Section
-                                </Button>
+                                </ButtonHeader>
                             </Grid>
                             <Grid item>
-                                <Button>
+                                <ButtonHeader>
                                     Second Section
-                                </Button>
+                                </ButtonHeader>
                             </Grid>
                             <Grid item>
-                                <Button>
+                                <ButtonHeader>
                                     Last Section
-                                </Button>
+                                </ButtonHeader>
                             </Grid>
                         </Grid>
+                    </PaperHeader>
+                </Grid>
+            </Grid>
+
+            <Grid container spacing={0} justify="center">
+                <Grid item xl={9} lg={10} md align="center">
+                    <Paper xs={5} elevation={0} square style={{height: '800px'}}>
+                        Wat
                     </Paper>
                 </Grid>
-                <Paper>
-
-                </Paper>
             </Grid>
         </Container>
     );
