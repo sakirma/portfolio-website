@@ -15,60 +15,90 @@ const ButtonHeader = withStyles({
     }
 })(Button);
 
+function HeaderButtons() {
+    return (
+        <Grid item xl={7} lg={10} md align="center">
+            <PaperHeader xs={5} elevation={0} style={{
+                backgroundColor: "#f7f7f7",
+                paddingTop: '16px',
+                paddingBottom: '16px',
+                fontFamily: 'inherit'
+            }}>
+                <Grid container justify="center" spacing={2} direction="row">
+                    <Grid item>
+                        <ButtonHeader>
+                            Introduction
+                        </ButtonHeader>
+                    </Grid>
+                    <Grid item>
+                        <ButtonHeader>
+                            First Section
+                        </ButtonHeader>
+                    </Grid>
+                    <Grid item>
+                        <ButtonHeader>
+                            Second Section
+                        </ButtonHeader>
+                    </Grid>
+                    <Grid item>
+                        <ButtonHeader>
+                            Last Section
+                        </ButtonHeader>
+                    </Grid>
+                </Grid>
+            </PaperHeader>
+        </Grid>
+    );
+}
+
 
 class HeaderBody extends React.Component {
     constructor(props) {
         super(props);
         this.headerBodyElement = React.createRef();
+        this.topHeader = React.createRef();
+        this.windowIsBelowHeader = false;
     }
 
     componentDidMount() {
-        this.props.app.onScrollCallbacks.push(this.headerBodyScroll);
+        this.props.app.onScrollCallbacks.push(() => this.headerBodyScroll());
     };
-    headerBodyScroll(event) {
+
+    headerBodyScroll() {
+        if (this.headerBodyElement.current.offsetTop < window.top.pageYOffset) {
+            this.setState({windowIsBelowHeader: true});
+            this.windowIsBelowHeader = true;
+        } else {
+            this.setState({windowIsBelowHeader: false});
+            this.windowIsBelowHeader = false;
+        }
+
 
     };
+
     render() {
         return (
-            <Grid
-                container
-                spacing={0}
-                justify="center"
-                onScroll={this.handleScroll}
-                ref={this.headerBodyElement}
-            >
-                <Grid item xl={7} lg={10} md align="center">
-                    <PaperHeader xs={5} elevation={0} style={{
-                        backgroundColor: "#f7f7f7",
-                        paddingTop: '16px',
-                        paddingBottom: '16px',
-                        fontFamily: 'inherit'
-                    }}>
-                        <Grid container justify="center" spacing={2} direction="row">
-                            <Grid item>
-                                <ButtonHeader>
-                                    Introduction
-                                </ButtonHeader>
-                            </Grid>
-                            <Grid item>
-                                <ButtonHeader>
-                                    First Section
-                                </ButtonHeader>
-                            </Grid>
-                            <Grid item>
-                                <ButtonHeader>
-                                    Second Section
-                                </ButtonHeader>
-                            </Grid>
-                            <Grid item>
-                                <ButtonHeader>
-                                    Last Section
-                                </ButtonHeader>
-                            </Grid>
-                        </Grid>
-                    </PaperHeader>
+            <div>
+                <Grid container spacing={0} justify="center" ref={this.headerBodyElement}>
+                    <HeaderButtons/>
                 </Grid>
-            </Grid>)
+                <AbsoluteHeader isActive={this.windowIsBelowHeader} reference={this.topHeader}/>
+            </div>
+        )
+    }
+}
+
+function AbsoluteHeader(props) {
+    if (props.isActive) {
+        return (
+            <Grid container spacing={0} justify="center" ref={props.reference} style={{position: 'fixed', top: '0', paddingRight: '64px'}}>
+                <HeaderButtons/>
+            </Grid>
+        );
+    } else {
+        return (
+            <div/>
+        );
     }
 }
 
