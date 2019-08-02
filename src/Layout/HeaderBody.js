@@ -15,9 +15,23 @@ const ButtonHeader = withStyles({
     }
 })(Button);
 
+const styles = theme => ({
+   absoluteWidthHeader: {
+       [theme.breakpoints.only('xs')]: {
+           paddingRight: '33px'
+       },
+       [theme.breakpoints.only('sm')]: {
+           paddingRight: '48px'
+       },
+       [theme.breakpoints.up('md')]: {
+           paddingRight: '64px'
+       },
+   }
+});
+
 function HeaderButtons() {
     return (
-        <Grid item xl={7} lg={10} md align="center">
+        <Grid item xs={12} sm={9} xl={7} lg={10} md align="center">
             <PaperHeader xs={5} elevation={0} style={{
                 backgroundColor: "#f7f7f7",
                 paddingTop: '16px',
@@ -55,6 +69,10 @@ function HeaderButtons() {
 class HeaderBody extends React.Component {
     constructor(props) {
         super(props);
+
+        const { classes } = props;
+        this.classes = classes;
+
         this.headerBodyElement = React.createRef();
         this.topHeader = React.createRef();
         this.windowIsBelowHeader = false;
@@ -72,8 +90,6 @@ class HeaderBody extends React.Component {
             this.setState({windowIsBelowHeader: false});
             this.windowIsBelowHeader = false;
         }
-
-
     };
 
     render() {
@@ -82,7 +98,7 @@ class HeaderBody extends React.Component {
                 <Grid container spacing={0} justify="center" ref={this.headerBodyElement}>
                     <HeaderButtons/>
                 </Grid>
-                <AbsoluteHeader isActive={this.windowIsBelowHeader} reference={this.topHeader}/>
+                <AbsoluteHeader classes={this.classes} isActive={this.windowIsBelowHeader} reference={this.topHeader}/>
             </div>
         )
     }
@@ -91,7 +107,7 @@ class HeaderBody extends React.Component {
 function AbsoluteHeader(props) {
     if (props.isActive) {
         return (
-            <Grid container spacing={0} justify="center" ref={props.reference} style={{position: 'fixed', top: '0', paddingRight: '64px'}}>
+            <Grid container spacing={0} justify="center" ref={props.reference} className={props.classes.absoluteWidthHeader} style={{position: 'fixed', top: '0'}}>
                 <HeaderButtons/>
             </Grid>
         );
@@ -102,4 +118,5 @@ function AbsoluteHeader(props) {
     }
 }
 
-export default HeaderBody;
+
+export default withStyles(styles)(HeaderBody);

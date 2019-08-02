@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container, Paper, Typography, Avatar, Grid} from "@material-ui/core";
 import HeaderBody from './Layout/HeaderBody';
+import BodySection from './Layout/BodySection';
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -73,9 +74,17 @@ class App extends React.Component {
                 <HeaderBody app={this}/>
 
                 <Grid container spacing={0} justify="center">
-                    <Grid item xl={7} lg={10} md align="center">
+                    <Grid item xs={12} sm={9} xl={7} lg={10} md align="center">
 
-                        <Paper xs={5} elevation={0} square style={{height: '1600px'}}>
+                        <Paper xs={10} elevation={0} square style={{height: '1600px'}}>
+                            <BodySection>
+                                OKE
+                            </BodySection>
+                            <BodySection>
+                                <h1>
+                                    WAT
+                                </h1>
+                            </BodySection>
                         </Paper>
                     </Grid>
                 </Grid>
