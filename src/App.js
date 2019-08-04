@@ -11,10 +11,10 @@ import logo from "./images/logo.jpeg";
 import layer from "./images/overlay.png";
 
 
-const BigAvatar = withStyles({
+const LargeProfilePicture = withStyles({
     root: {
-        width: 175,
-        height: 175,
+        width: 256,
+        height: 256,
         margin: 20,
     }
 })(Avatar);
@@ -52,7 +52,7 @@ class App extends React.Component {
                 >
                     <Grid item container direction="column" xs align="center" justify="flex-end">
                         <Grid item>
-                            <BigAvatar alt="Huseyin Caliskan" src={logo} className="bigAvatar"> </BigAvatar>
+                            {/*<BigAvatar alt="Huseyin Caliskan" src={logo} className="bigAvatar"> </BigAvatar>*/}
                         </Grid>
 
                         <Grid item>
@@ -77,14 +77,28 @@ class App extends React.Component {
                     <Grid item xs={12} sm={9} xl={7} lg={10} md align="center">
 
                         <Paper xs={10} elevation={0} square style={{height: '1600px'}}>
-                            <BodySection>
-                                OKE
-                            </BodySection>
-                            <BodySection>
-                                <h1>
-                                    WAT
-                                </h1>
-                            </BodySection>
+                            <Grid container direction="column" spacing={0}>
+                                    <BodySection>
+                                       <Grid container spacing={0} direction="row" justify="center" alignItems="center">
+                                           <Grid item container style={{width: '60%'}}>
+
+                                               Wow
+
+                                           </Grid>
+                                           <Grid item container style={{width: '40%'}} justify="center">
+                                               <LargeProfilePicture src={logo} className="largeProfilePicture"></LargeProfilePicture>
+                                           </Grid>
+                                       </Grid>
+                                    </BodySection>
+
+                                <Grid item>
+                                    <BodySection>
+                                        <div>
+                                            WAT
+                                        </div>
+                                    </BodySection>
+                                </Grid>
+                            </Grid>
                         </Paper>
                     </Grid>
                 </Grid>
