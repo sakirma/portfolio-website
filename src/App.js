@@ -2,6 +2,7 @@ import React from 'react';
 import {Container, Paper, Typography, Avatar, Grid} from "@material-ui/core";
 import HeaderBody from './Layout/HeaderBody';
 import BodySection from './Layout/BodySection';
+import IntroductonSection from './Sections/IntroductionSection';
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -17,9 +18,9 @@ const LargeProfilePicture = withStyles({
         borderStyle: "solid",
         borderWidth: 1,
         borderColor: "#dddddd",
+
         width: 256,
         height: 256,
-        margin: 20,
     },
     img: {
         borderRadius: '100%',
@@ -90,9 +91,10 @@ class App extends React.Component {
                                        <Grid container spacing={0} direction="row" justify="center" alignItems="center">
                                            <Grid item container style={{width: '60%'}}>
 
-                                               Wow
+                                               <IntroductonSection/>
 
                                            </Grid>
+
                                            <Grid item container style={{width: '40%'}} justify="center">
                                                <LargeProfilePicture src={logo} className="largeProfilePicture"></LargeProfilePicture>
                                            </Grid>
