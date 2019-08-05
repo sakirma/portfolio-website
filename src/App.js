@@ -1,32 +1,12 @@
 import React from 'react';
-import {Container, Paper, Typography, Avatar, Grid} from "@material-ui/core";
+import {Container, Paper, Typography, Grid} from "@material-ui/core";
 import HeaderBody from './Layout/HeaderBody';
 import BodySection from './Layout/BodySection';
-import IntroductonSection from './Sections/IntroductionSection';
-
-import withStyles from "@material-ui/core/styles/withStyles";
+import IntroductionSection from './Sections/IntroductionSection';
 
 
 import "./header.css"
-import logo from "./images/logo.jpeg";
 import layer from "./images/overlay.png";
-
-
-const LargeProfilePicture = withStyles({
-    root: {
-        padding: "0.4em",
-        borderStyle: "solid",
-        borderWidth: 1,
-        borderColor: "#dddddd",
-
-        width: 256,
-        height: 256,
-    },
-    img: {
-        borderRadius: '100%',
-    }
-
-})(Avatar);
 
 class App extends React.Component {
     componentDidMount() {
@@ -88,17 +68,8 @@ class App extends React.Component {
                         <Paper xs={10} elevation={0} square style={{height: '1600px'}}>
                             <Grid container direction="column" spacing={0}>
                                     <BodySection>
-                                       <Grid container spacing={0} direction="row" justify="center" alignItems="center">
-                                           <Grid item container style={{width: '60%'}}>
+                                        <IntroductionSection/>
 
-                                               <IntroductonSection/>
-
-                                           </Grid>
-
-                                           <Grid item container style={{width: '40%'}} justify="center">
-                                               <LargeProfilePicture src={logo} className="largeProfilePicture"></LargeProfilePicture>
-                                           </Grid>
-                                       </Grid>
                                     </BodySection>
 
                                 <Grid item>
