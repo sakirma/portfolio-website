@@ -13,10 +13,18 @@ import layer from "./images/overlay.png";
 
 const LargeProfilePicture = withStyles({
     root: {
+        padding: "0.4em",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "#dddddd",
         width: 256,
         height: 256,
         margin: 20,
+    },
+    img: {
+        borderRadius: '100%',
     }
+
 })(Avatar);
 
 class App extends React.Component {

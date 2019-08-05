@@ -107,7 +107,7 @@ class HeaderBody extends React.Component {
 function AbsoluteHeader(props) {
     if (props.isActive) {
         return (
-            <Grid container spacing={0} justify="center" ref={props.reference} className={props.classes.absoluteWidthHeader} style={{position: 'fixed', top: '0'}}>
+            <Grid container spacing={0} justify="center" ref={props.reference} className={props.classes.absoluteWidthHeader} style={{position: 'fixed', top: '0', zIndex: 1000}}>
                 <HeaderButtons/>
             </Grid>
         );
