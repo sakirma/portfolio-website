@@ -1,5 +1,6 @@
 import React from 'react';
-import {Grid, Avatar} from "@material-ui/core";
+import {Grid, Avatar, Button} from "@material-ui/core";
+import HeaderUnderline from "../Layout/HeaderUnderline";
 import withStyles from "@material-ui/core/styles/withStyles";
 import logo from "../images/logo.jpeg";
 
@@ -19,22 +20,34 @@ const LargeProfilePicture = withStyles({
 
 })(Avatar);
 
+const styles = theme => ({
+    button: {
+        margin: theme.spacing(1),
+    },
+});
+
 class IntroductionSection extends React.Component {
+    constructor(props) {
+        super(props);
+
+        const { classes } = props;
+
+        this.classes = classes;
+    }
+
     render() {
         return (
             <Grid container spacing={0} direction="row" justify="center" alignItems="center">
                 <Grid style={{width: '60%', height: '100%'}} container spacing={0} direction='column' alignItems='center' justify='flex-start'>
-                    <Grid item>
-                        <h2 style={{textAlign: 'left'}}>Huseyin Caliskan</h2>
+                    <Grid item style={{textAlign: 'left'}}>
+                        <HeaderUnderline>Huseyin Caliskan</HeaderUnderline>
                         <i>
                             <p>
-                                Note the styling of body, html and #root in index.css for this to
-                                work.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend, justo sit amet sodales dictum, nulla leo cursus nibh, eu pulvinar ipsum turpis vel metus. Suspendisse venenatis, mauris a commodo vestibulum, felis dui aliquet erat, at aliquam lacus tellus eget augue. Duis ac libero vitae neque commodo vestibulum.
                             </p>
-                            <p>
-                                Thanks to <a href="https://codesandbox.io/s/gLE85V2D">STUNAZ</a> for
-                                improving upon my original!
-                            </p>
+                            <Button variant="outlined" className={this.classes.button} style={{marginLeft: 0}}>
+                                Learn More
+                            </Button>
                         </i>
                     </Grid>
 
@@ -47,4 +60,4 @@ class IntroductionSection extends React.Component {
     }
 }
 
-export default IntroductionSection;
+export default withStyles(styles)(IntroductionSection);

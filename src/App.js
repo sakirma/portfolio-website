@@ -3,7 +3,7 @@ import {Container, Paper, Typography, Grid} from "@material-ui/core";
 import HeaderBody from './Layout/HeaderBody';
 import BodySection from './Layout/BodySection';
 import IntroductionSection from './Sections/IntroductionSection';
-
+import ProjectsSection from './Sections/ProjectsSection';
 
 import "./header.css"
 import layer from "./images/overlay.png";
@@ -19,8 +19,7 @@ class App extends React.Component {
 
     handleScroll(event) {
         let length = this.onScrollCallbacks.length;
-        for (let i = 0; i < length; i++)
-        {
+        for (let i = 0; i < length; i++) {
             this.onScrollCallbacks[i](event);
         }
     };
@@ -32,7 +31,13 @@ class App extends React.Component {
 
     render() {
         return (
-            <Container style={{flexGrow: 1, minHeight: "100vh", minWidth: "100%", fontFamily: "'Source Sans Pro', sans-serif", backgroundImage: 'url(' + layer + ') ,linear-gradient(45deg, #e37682 15%, #5f4d93 85%)'}}>
+            <Container style={{
+                flexGrow: 1,
+                minHeight: "100vh",
+                minWidth: "100%",
+                fontFamily: "'Source Sans Pro', sans-serif",
+                backgroundImage: 'url(' + layer + ') ,linear-gradient(45deg, #e37682 15%, #5f4d93 85%)'
+            }}>
                 <Grid
                     container
                     spacing={0}
@@ -67,16 +72,13 @@ class App extends React.Component {
 
                         <Paper xs={10} elevation={0} square style={{height: '1600px'}}>
                             <Grid container direction="column" spacing={0}>
-                                    <BodySection>
-                                        <IntroductionSection/>
-
-                                    </BodySection>
+                                <BodySection>
+                                    <IntroductionSection/>
+                                </BodySection>
 
                                 <Grid item>
                                     <BodySection>
-                                        <div>
-                                            WAT
-                                        </div>
+                                        <ProjectsSection/>
                                     </BodySection>
                                 </Grid>
                             </Grid>
