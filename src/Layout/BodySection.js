@@ -11,17 +11,18 @@ class BodySection extends React.Component {
     constructor(props) {
         super(props);
 
-        const { classes } = props;
+        const {classes} = props;
         this.classes = classes;
     }
 
 
     render() {
         return (
-            <Grid item container className={this.classes.root} style={{borderBottom: 'groove', borderWidth: '0.1px', borderColor: '#d3d3d34a'}}>
-                { this.props.children }
+            <Grid container className={this.classes.root}
+                  style={{borderBottom: 'groove', borderWidth: '0.1px', borderColor: '#d3d3d34a'}}>
+                {this.props.children}
             </Grid>
-             );
+        );
     }
 }
 

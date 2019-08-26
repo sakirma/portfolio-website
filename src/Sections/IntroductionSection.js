@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Avatar, Button} from "@material-ui/core";
+import {Grid, Avatar} from "@material-ui/core";
 import HeaderUnderline from "../Layout/HeaderUnderline";
 import withStyles from "@material-ui/core/styles/withStyles";
 import logo from "../images/logo.jpeg";
@@ -21,9 +21,9 @@ const LargeProfilePicture = withStyles({
 })(Avatar);
 
 const styles = theme => ({
-    button: {
-        margin: theme.spacing(1),
-    },
+    // button: {
+    //     margin: theme.spacing(1),
+    // },
 });
 
 class IntroductionSection extends React.Component {
@@ -45,9 +45,9 @@ class IntroductionSection extends React.Component {
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend, justo sit amet sodales dictum, nulla leo cursus nibh, eu pulvinar ipsum turpis vel metus. Suspendisse venenatis, mauris a commodo vestibulum, felis dui aliquet erat, at aliquam lacus tellus eget augue. Duis ac libero vitae neque commodo vestibulum.
                             </p>
-                            <Button variant="outlined" className={this.classes.button} style={{marginLeft: 0}}>
-                                Learn More
-                            </Button>
+                            {/*<Button variant="outlined" className={this.classes.button} style={{marginLeft: 0}} onClick={() => {console.log("wat")}}>*/}
+                            {/*    Learn More*/}
+                            {/*</Button>*/}
                         </i>
                     </Grid>
 

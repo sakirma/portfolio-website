@@ -76,11 +76,9 @@ class App extends React.Component {
                                     <IntroductionSection/>
                                 </BodySection>
 
-                                <Grid item>
-                                    <BodySection>
-                                        <ProjectsSection/>
-                                    </BodySection>
-                                </Grid>
+                                <BodySection>
+                                    <ProjectsSection/>
+                                </BodySection>
                             </Grid>
                         </Paper>
                     </Grid>

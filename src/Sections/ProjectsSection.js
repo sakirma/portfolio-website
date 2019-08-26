@@ -1,15 +1,62 @@
 import React from 'react';
-import {Grid} from "@material-ui/core";
+import {Avatar, Grid} from "@material-ui/core";
 import HeaderUnderline from "../Layout/HeaderUnderline";
+import withStyles from "@material-ui/core/styles/withStyles";
+import bannerlord from '../images/Bannerlord wallpaper.jpg';
+
+const LargeAvatarPicture = withStyles({
+    root: {
+        padding: "0.4em",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "#dddddd",
+
+        width: '10.25em',
+        height: '10.25em',
+    },
+    img: {
+        borderRadius: '100%',
+    }
+})(Avatar);
+
 
 class ProjectsSection extends React.Component {
     render() {
         return (
-            <div>
-                <HeaderUnderline> Projects </HeaderUnderline>
+            <div style={{width: '100%', height: '100%'}}>
+                <HeaderUnderline> Work </HeaderUnderline>
                 <Grid container spacing={0} direction="row" justify="center" alignItems="center">
-                    <Grid style={{width: '60%', height: '100%'}} container spacing={0} direction='column' alignItems='center' justify='flex-start'>
-
+                    <Grid container spacing={10}
+                          direction="row"
+                          justify="center"
+                          alignItems="center">
+                        <Grid item style={{width: '33%'}}>
+                            <LargeAvatarPicture src={bannerlord}/>
+                            <h3>
+                                Bannerlord
+                            </h3>
+                            <p>
+                                Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.
+                            </p>
+                        </Grid>
+                        <Grid item style={{width: '33%'}}>
+                            <LargeAvatarPicture src={bannerlord}/>
+                            <h3>
+                                Bannerlord
+                            </h3>
+                            <p>
+                                Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.
+                            </p>
+                        </Grid>
+                        <Grid item style={{width: '33%'}}>
+                            <LargeAvatarPicture src={bannerlord}/>
+                            <h3>
+                                Bannerlord
+                            </h3>
+                            <p>
+                                Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.
+                            </p>
+                        </Grid>
                     </Grid>
                 </Grid>
             </div>
