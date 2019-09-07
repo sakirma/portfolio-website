@@ -16,17 +16,17 @@ const ButtonHeader = withStyles({
 })(Button);
 
 const styles = theme => ({
-   absoluteWidthHeader: {
-       [theme.breakpoints.only('xs')]: {
-           paddingRight: '33px'
-       },
-       [theme.breakpoints.only('sm')]: {
-           paddingRight: '48px'
-       },
-       [theme.breakpoints.up('md')]: {
-           paddingRight: '64px'
-       },
-   }
+    absoluteWidthHeader: {
+        [theme.breakpoints.only('xs')]: {
+            paddingRight: '33px'
+        },
+        [theme.breakpoints.only('sm')]: {
+            paddingRight: '48px'
+        },
+        [theme.breakpoints.up('md')]: {
+            paddingRight: '64px'
+        },
+    }
 });
 
 function HeaderButtons() {
@@ -46,7 +46,7 @@ function HeaderButtons() {
                     </Grid>
                     <Grid item>
                         <ButtonHeader>
-                            First Section
+                            Work
                         </ButtonHeader>
                     </Grid>
                     <Grid item>
@@ -70,7 +70,7 @@ class HeaderBody extends React.Component {
     constructor(props) {
         super(props);
 
-        const { classes } = props;
+        const {classes} = props;
         this.classes = classes;
 
         this.headerBodyElement = React.createRef();
@@ -107,7 +107,8 @@ class HeaderBody extends React.Component {
 function AbsoluteHeader(props) {
     if (props.isActive) {
         return (
-            <Grid container spacing={0} justify="center" ref={props.reference} className={props.classes.absoluteWidthHeader} style={{position: 'fixed', top: '0', zIndex: 1000}}>
+            <Grid container spacing={0} justify="center" ref={props.reference}
+                  className={props.classes.absoluteWidthHeader} style={{position: 'fixed', top: '0', zIndex: 1000}}>
                 <HeaderButtons/>
             </Grid>
         );

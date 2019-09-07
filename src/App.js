@@ -3,7 +3,7 @@ import {Container, Paper, Typography, Grid} from "@material-ui/core";
 import HeaderBody from './Layout/HeaderBody';
 import BodySection from './Layout/BodySection';
 import IntroductionSection from './Sections/IntroductionSection';
-import ProjectsSection from './Sections/ProjectsSection';
+import WorkSection from './Sections/WorkSection';
 
 import "./header.css"
 import layer from "./images/overlay.png";
@@ -77,7 +77,7 @@ class App extends React.Component {
                                 </BodySection>
 
                                 <BodySection>
-                                    <ProjectsSection/>
+                                    <WorkSection/>
                                 </BodySection>
                             </Grid>
                         </Paper>
