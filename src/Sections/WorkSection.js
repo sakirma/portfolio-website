@@ -12,9 +12,9 @@ class WorkSection extends React.Component {
                     <Grid container spacing={5}
                           direction="row"
                           justify="center">
-                        <Work/>
-                        <Work/>
-                        <Work/>
+                        <Work onProjectOpenend={() => this.props.onProjectOpenend(this.props.work1, this.props.app)} information={this.props.work1}/>
+                        <Work onProjectOpenend={() => this.props.onProjectOpenend(this.props.work2, this.props.app)} information={this.props.work2}/>
+                        <Work onProjectOpenend={() => this.props.onProjectOpenend(this.props.work3, this.props.app)} information={this.props.work3}/>
 
                     </Grid>
                 </Grid>

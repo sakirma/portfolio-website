@@ -1,5 +1,13 @@
 import React from 'react';
-import {Container, Paper, Typography, Grid} from "@material-ui/core";
+import {
+    Container,
+    Paper,
+    Typography,
+    Grid,
+    CardMedia,
+    withStyles,
+} from "@material-ui/core";
+
 import HeaderBody from './Layout/HeaderBody';
 import BodySection from './Layout/BodySection';
 import IntroductionSection from './Sections/IntroductionSection';
@@ -8,9 +16,69 @@ import WorkSection from './Sections/WorkSection';
 import "./header.css"
 import layer from "./images/overlay.png";
 
+import Projects from "./Projects";
+
+const styles = theme => ({
+    card: {},
+    media: {
+        height: "100%"
+    },
+});
+
+function DefaultPage(props) {
+    let parent = props.parent;
+    return (<div>
+        <Grid container spacing={0} justify="center">
+            <Grid item xs={12} sm={9} xl={7} lg={10} md align="center">
+                <Paper xs={10} elevation={0} square style={{height: '1600px'}}>
+                    <Grid container direction="column" spacing={0}>
+                        <BodySection>
+                            <IntroductionSection/>
+                        </BodySection>
+
+                        <BodySection>
+                            <WorkSection onProjectOpenend={parent.openProject}
+                                         work1={Projects.work1}
+                                         work2={Projects.work2}
+                                         work3={Projects.work3}
+                                         app={props.parent}/>
+                        </BodySection>
+                        <ProjectPage isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}
+                                     parent={parent}/>
+                    </Grid>
+                </Paper>
+            </Grid>
+        </Grid>
+    </div>)
+}
+
+function ProjectPage(props) {
+    let parent = props.parent;
+    let work = parent.currentOpenWork;
+    if (props.isActive) {
+        return (<div>
+            <Grid container direction="column" style={{height: "20em"}}>
+                <Grid item xs={false} sm={12} style={{maxHeight: "15em"}}>
+                    <CardMedia
+                        className={parent.classes.media}
+                        image={work.pictures[0].image}
+                        style={work.pictures[0].styling}
+                    />
+                </Grid>
+            </Grid>
+
+        </div>);
+    } else {
+        return (<div>
+
+        </div>);
+    }
+}
+
 class App extends React.Component {
     componentDidMount() {
         window.addEventListener('scroll', (e) => this.handleScroll(e));
+        this.handleStateChanged();
     };
 
     componentWillUnmount() {
@@ -24,9 +92,31 @@ class App extends React.Component {
         }
     };
 
+    handleStateChanged() {
+        let length = this.onPageStateChangedCallback.length;
+        for (let i = 0; i < length; i++) {
+            this.onPageStateChangedCallback[i]();
+        }
+    }
+
+    openProject(work, app) {
+        app.setState({currentPageState: app.pageStates.ProjectPage});
+        app.currentOpenWork = work;
+    }
+
     constructor(props) {
         super(props);
+
+        const {classes} = props;
+        this.classes = classes;
+
         this.onScrollCallbacks = [];
+
+        this.pageStates = {DefaultPage: "DefaultPage", ProjectPage: "ProjectPage"};
+        this.state = {currentPageState: this.pageStates.DefaultPage};
+        this.currentOpenWork = null;
+
+        this.onPageStateChangedCallback = [];
     };
 
     render() {
@@ -46,10 +136,6 @@ class App extends React.Component {
                 >
                     <Grid item container direction="column" xs align="center" justify="flex-end">
                         <Grid item>
-                            {/*<BigAvatar alt="Huseyin Caliskan" src={logo} className="bigAvatar"> </BigAvatar>*/}
-                        </Grid>
-
-                        <Grid item>
                             <Typography variant="h3" style={{color: "white", fontFamily: "inherit"}}>
                                 Huseyin Caliskan
                             </Typography>
@@ -67,25 +153,11 @@ class App extends React.Component {
 
                 <HeaderBody app={this}/>
 
-                <Grid container spacing={0} justify="center">
-                    <Grid item xs={12} sm={9} xl={7} lg={10} md align="center">
-
-                        <Paper xs={10} elevation={0} square style={{height: '1600px'}}>
-                            <Grid container direction="column" spacing={0}>
-                                <BodySection>
-                                    <IntroductionSection/>
-                                </BodySection>
-
-                                <BodySection>
-                                    <WorkSection/>
-                                </BodySection>
-                            </Grid>
-                        </Paper>
-                    </Grid>
-                </Grid>
+                <DefaultPage parent={this}/>
             </Container>
         );
     }
 }
 
-export default App;
+
+export default withStyles(styles)(App);

@@ -45,15 +45,12 @@ class IntroductionSection extends React.Component {
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend, justo sit amet sodales dictum, nulla leo cursus nibh, eu pulvinar ipsum turpis vel metus. Suspendisse venenatis, mauris a commodo vestibulum, felis dui aliquet erat, at aliquam lacus tellus eget augue. Duis ac libero vitae neque commodo vestibulum.
                             </p>
-                            {/*<Button variant="outlined" className={this.classes.button} style={{marginLeft: 0}} onClick={() => {console.log("wat")}}>*/}
-                            {/*    Learn More*/}
-                            {/*</Button>*/}
                         </i>
                     </Grid>
 
                 </Grid>
                 <Grid item container style={{width: '40%'}} justify="center">
-                    <LargeProfilePicture src={logo} className="largeProfilePicture"></LargeProfilePicture>
+                    <LargeProfilePicture src={logo} className="largeProfilePicture"/>
                 </Grid>
             </Grid>
         )

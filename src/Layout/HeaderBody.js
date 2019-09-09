@@ -76,6 +76,8 @@ class HeaderBody extends React.Component {
         this.headerBodyElement = React.createRef();
         this.topHeader = React.createRef();
         this.windowIsBelowHeader = false;
+
+        this.props.app.onPageStateChangedCallback.push(() => this.headerBodyScroll())
     }
 
     componentDidMount() {

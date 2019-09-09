@@ -1,5 +1,4 @@
 import React from "react";
-import bannerlord from "../images/Bannerlord wallpaper.jpg";
 import {Avatar, Grid} from "@material-ui/core";
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -22,17 +21,17 @@ class Work extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hover: false,
+            hover: true,
         }
     }
 
-    toggleHover(c) {
-        c.setState({hover: !this.state.hover});
+    toggleHover(c, state) {
+        c.setState({hover: !state});
     }
 
     render() {
         let hoverStyle;
-        if (this.state.hover) {
+        if (!this.state.hover) {
             hoverStyle = {backgroundColor: "rgba(211, 211, 211, 0.5)", cursor: 'pointer'}
         } else {
             hoverStyle = {backgroundColor: "rgba(0, 0, 0, 0.0)", cursor: 'default'}
@@ -41,10 +40,15 @@ class Work extends React.Component {
         return (
             <Grid item xs={4} style={{position: "relative"}}>
                 <div>
-                    <LargeAvatarPicture onMouseEnter={() => this.toggleHover(this)}
-                                        onMouseLeave={() => this.toggleHover(this)}
-                                        style={{backgroundColor: hoverStyle.backgroundColor, cursor: hoverStyle.cursor, marginBottom: "10px"}}
-                                        src={bannerlord}/>
+                    <LargeAvatarPicture onMouseEnter={() => this.toggleHover(this, true)}
+                                        onMouseLeave={() => this.toggleHover(this, false)}
+                                        onClick={() => this.props.onProjectOpenend()}
+                                        style={{
+                                            backgroundColor: hoverStyle.backgroundColor,
+                                            cursor: hoverStyle.cursor,
+                                            marginBottom: "10px"
+                                        }}
+                                        src={this.props.information.thumbnail}/>
                     <div style={{
                         backgroundColor: hoverStyle.backgroundColor,
                         cursor: hoverStyle.cursor,
@@ -53,17 +57,14 @@ class Work extends React.Component {
                         borderRadius: "30px",
                         borderColor: "rgba(211, 211, 211, 0.5)"
                     }}
-                         onMouseEnter={() => this.toggleHover(this)} onMouseLeave={() => this.toggleHover(this)}>
+                         onMouseEnter={() => this.toggleHover(this, true)}
+                         onMouseLeave={() => this.toggleHover(this, false)}
+                         onClick={() => this.props.onProjectOpenend()}>
                         <h3 style={{marginTop: "1em"}}>
-                            Bannerlord
+                            {this.props.information.title}
                         </h3>
                         <p>
-                            Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus
-                            veroeros sed consequat.
-                            Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus
-                            veroeros sed consequat.
-                            Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus
-                            veroeros sed consequat.
+                            {this.props.information.text}
                         </p>
                     </div>
                 </div>
