@@ -5,7 +5,7 @@ import {
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import HeaderBody from './Layout/HeaderBody';
+import HeaderBody from './Layout/HeaderBody';
 // import BodySection from './Layout/BodySection';
 // import IntroductionSection from './Sections/IntroductionSection';
 // import WorkSection from './Sections/WorkSection';
@@ -123,40 +123,27 @@ class App extends React.Component {
     render() {
         return (
             <Container fluid style={{
-                minHeight: "100vh",
+                minHeight: "1000vh",
                 minWidth: "100%",
                 fontFamily: "'Source Sans Pro', sans-serif",
                 backgroundImage: 'url(' + layer + ') ,linear-gradient(45deg, #e37682 15%, #5f4d93 85%)'
             }}>
                 <Container
-                    // container
-                    // spacing={0}
-                    // justify="center"
                     style={{height: "50vh"}}
-                    className="align-items-center"
                 >
-                    <Col style={{height: "100%"}} className="d-flex align-content-center flex-wrap">
-                            <h3 className="text-center align-middle" style={{color: "white", fontFamily: "inherit"}}>
+                    <Row style={{height: "100%"}}>
+                        <Col className="align-self-end">
+                            <h1 className="text-center" style={{color: "white", fontFamily: "inherit", fontSize: "3.5em", paddingBottom: "1vh"}}>
                                 Huseyin Caliskan
-                            </h3>
-
-                        {/*        <Grid item>*/}
-                        {/*            <Typography variant="h3" >*/}
-                        {/*                Huseyin Caliskan*/}
-                        {/*            </Typography>*/}
-                        {/*        </Grid>*/}
-
-                        {/*        <Grid item style={{paddingBottom: "10vh"}}>*/}
-                        {/*            <Typography variant="subtitle1" style={{color: "white", fontFamily: "inherit"}}>*/}
-                        {/*                <p>*/}
-                        {/*                    Just an ordinary Software Engineer*/}
-                        {/*                </p>*/}
-                        {/*            </Typography>*/}
-                        {/*        </Grid>*/}
-                    </Col>
+                            </h1>
+                            <p className="text-center" style={{color: "white", fontFamily: "inherit", paddingBottom: "10vh"}}>
+                                Just an ordinary Software Engineer
+                            </p>
+                        </Col>
+                    </Row>
                 </Container>
 
-                {/*<HeaderBody app={this}/>*/}
+                <HeaderBody app={this}/>
 
                 {/*<DefaultPage parent={this}/>*/}
             </Container>

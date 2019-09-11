@@ -3,3 +3,12 @@
     width: 175px;
     height: 175px;
 }
+
+.btn-light {
+    cursor: pointer;
+}
+
+.btn-light:not(:disabled):not(.disabled).active {
+    background-color: white;
+    border-color: transparent;
+}
