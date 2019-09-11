@@ -1,22 +1,19 @@
 import React from 'react';
 import {
-    Container,
-    Paper,
-    Typography,
-    Grid,
-    CardMedia,
-    withStyles,
-} from "@material-ui/core";
+    Container, Col, Row,
+    Image
+} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import HeaderBody from './Layout/HeaderBody';
-import BodySection from './Layout/BodySection';
-import IntroductionSection from './Sections/IntroductionSection';
-import WorkSection from './Sections/WorkSection';
+// import HeaderBody from './Layout/HeaderBody';
+// import BodySection from './Layout/BodySection';
+// import IntroductionSection from './Sections/IntroductionSection';
+// import WorkSection from './Sections/WorkSection';
 
-import "./header.css"
+// import "./header.css"
 import layer from "./images/overlay.png";
-
-import Projects from "./Projects";
+//
+// import Projects from "./Projects";
 
 const styles = theme => ({
     card: {},
@@ -28,27 +25,31 @@ const styles = theme => ({
 function DefaultPage(props) {
     let parent = props.parent;
     return (<div>
-        <Grid container spacing={0} justify="center">
-            <Grid item xs={12} sm={9} xl={7} lg={10} md align="center">
-                <Paper xs={10} elevation={0} square style={{height: '1600px'}}>
-                    <Grid container direction="column" spacing={0}>
-                        <BodySection>
-                            <IntroductionSection/>
-                        </BodySection>
+        <Container fluid>
+            <Col>
+                {/*xs={12} sm={9} xl={7} lg={10} md align="center"*/}
+                <Row>
+                    {/*xs={10} elevation={0} square style={{height: '1600px'}}*/}
+                    <div>
+                        {/*<Grid container direction="column" spacing={0}>*/}
+                        {/*    <BodySection>*/}
+                        {/*        <IntroductionSection/>*/}
+                        {/*    </BodySection>*/}
 
-                        <BodySection>
-                            <WorkSection onProjectOpenend={parent.openProject}
-                                         work1={Projects.work1}
-                                         work2={Projects.work2}
-                                         work3={Projects.work3}
-                                         app={props.parent}/>
-                        </BodySection>
-                        <ProjectPage isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}
-                                     parent={parent}/>
-                    </Grid>
-                </Paper>
-            </Grid>
-        </Grid>
+                        {/*    <BodySection>*/}
+                        {/*        <WorkSection onProjectOpenend={parent.openProject}*/}
+                        {/*                     work1={Projects.work1}*/}
+                        {/*                     work2={Projects.work2}*/}
+                        {/*                     work3={Projects.work3}*/}
+                        {/*                     app={props.parent}/>*/}
+                        {/*    </BodySection>*/}
+                        {/*    <ProjectPage isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}*/}
+                        {/*                 parent={parent}/>*/}
+                        {/*</Grid>*/}
+                    </div>
+                </Row>
+            </Col>
+        </Container>
     </div>)
 }
 
@@ -57,15 +58,15 @@ function ProjectPage(props) {
     let work = parent.currentOpenWork;
     if (props.isActive) {
         return (<div>
-            <Grid container direction="column" style={{height: "20em"}}>
-                <Grid item xs={false} sm={12} style={{maxHeight: "15em"}}>
-                    <CardMedia
-                        className={parent.classes.media}
-                        image={work.pictures[0].image}
-                        style={work.pictures[0].styling}
-                    />
-                </Grid>
-            </Grid>
+            {/*<Grid container direction="column" style={{height: "20em"}}>*/}
+            {/*    <Grid item xs={false} sm={12} style={{maxHeight: "15em"}}>*/}
+            {/*        <CardMedia*/}
+            {/*            className={parent.classes.media}*/}
+            {/*            image={work.pictures[0].image}*/}
+            {/*            style={work.pictures[0].styling}*/}
+            {/*        />*/}
+            {/*    </Grid>*/}
+            {/*</Grid>*/}
 
         </div>);
     } else {
@@ -121,43 +122,47 @@ class App extends React.Component {
 
     render() {
         return (
-            <Container style={{
-                flexGrow: 1,
+            <Container fluid style={{
                 minHeight: "100vh",
                 minWidth: "100%",
                 fontFamily: "'Source Sans Pro', sans-serif",
                 backgroundImage: 'url(' + layer + ') ,linear-gradient(45deg, #e37682 15%, #5f4d93 85%)'
             }}>
-                <Grid
-                    container
-                    spacing={0}
-                    justify="center"
+                <Container
+                    // container
+                    // spacing={0}
+                    // justify="center"
                     style={{height: "50vh"}}
+                    className="align-items-center"
                 >
-                    <Grid item container direction="column" xs align="center" justify="flex-end">
-                        <Grid item>
-                            <Typography variant="h3" style={{color: "white", fontFamily: "inherit"}}>
+                    <Col style={{height: "100%"}} className="d-flex align-content-center flex-wrap">
+                            <h3 className="text-center align-middle" style={{color: "white", fontFamily: "inherit"}}>
                                 Huseyin Caliskan
-                            </Typography>
-                        </Grid>
+                            </h3>
 
-                        <Grid item style={{paddingBottom: "10vh"}}>
-                            <Typography variant="subtitle1" style={{color: "white", fontFamily: "inherit"}}>
-                                <p>
-                                    Just an ordinary Software Engineer
-                                </p>
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                </Grid>
+                        {/*        <Grid item>*/}
+                        {/*            <Typography variant="h3" >*/}
+                        {/*                Huseyin Caliskan*/}
+                        {/*            </Typography>*/}
+                        {/*        </Grid>*/}
 
-                <HeaderBody app={this}/>
+                        {/*        <Grid item style={{paddingBottom: "10vh"}}>*/}
+                        {/*            <Typography variant="subtitle1" style={{color: "white", fontFamily: "inherit"}}>*/}
+                        {/*                <p>*/}
+                        {/*                    Just an ordinary Software Engineer*/}
+                        {/*                </p>*/}
+                        {/*            </Typography>*/}
+                        {/*        </Grid>*/}
+                    </Col>
+                </Container>
 
-                <DefaultPage parent={this}/>
+                {/*<HeaderBody app={this}/>*/}
+
+                {/*<DefaultPage parent={this}/>*/}
             </Container>
         );
     }
 }
 
-
-export default withStyles(styles)(App);
+export default App;
+// export default withStyles(styles)(App);

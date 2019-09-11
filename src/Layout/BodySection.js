@@ -1,5 +1,4 @@
 import React from 'react';
-import {Grid, withStyles} from "@material-ui/core";
 
 const styles = theme => ({
     root: {
@@ -16,14 +15,18 @@ class BodySection extends React.Component {
     }
 
 
+    // render() {
+    //     return (
+    //         {/*<Grid container className={this.classes.root}*/}
+    //         {/*      style={{borderBottom: 'groove', borderWidth: '0.1px', borderColor: '#d3d3d34a'}}>*/}
+    //         {/*    {this.props.children}*/}
+    //         {/*</Grid>*/}
+    //     );
+    // }
+
     render() {
-        return (
-            <Grid container className={this.classes.root}
-                  style={{borderBottom: 'groove', borderWidth: '0.1px', borderColor: '#d3d3d34a'}}>
-                {this.props.children}
-            </Grid>
-        );
+        return (<div/>);
     }
 }
 
-export default withStyles(styles)(BodySection);
+export default BodySection;
