@@ -12,3 +12,13 @@
     background-color: white;
     border-color: transparent;
 }
+
+.header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.header-sticky {
+    color: red !important;
+}

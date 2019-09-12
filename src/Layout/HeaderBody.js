@@ -3,20 +3,6 @@ import {ButtonToolbar, Card, Col, Container, Row, ToggleButton, ToggleButtonGrou
 
 import "../header.css"
 
-const styles = theme => ({
-    absoluteWidthHeader: {
-        [theme.breakpoints.only('xs')]: {
-            paddingRight: '33px'
-        },
-        [theme.breakpoints.only('sm')]: {
-            paddingRight: '48px'
-        },
-        [theme.breakpoints.up('md')]: {
-            paddingRight: '64px'
-        },
-    }
-});
-
 function HeaderButtons() {
     return (
         <Container xs={12} sm={9} xl={7} lg={10}>
@@ -52,56 +38,28 @@ class HeaderBody extends React.Component {
     constructor(props) {
         super(props);
 
-        const {classes} = props;
-        this.classes = classes;
-
-        this.headerBodyElement = React.createRef();
-        this.topHeader = React.createRef();
-        this.windowIsBelowHeader = false;
-
-        this.props.app.onPageStateChangedCallback.push(() => this.headerBodyScroll())
+        this.header = React.createRef();
     }
 
     componentDidMount() {
-        this.props.app.onScrollCallbacks.push(() => this.headerBodyScroll());
-    };
+        document.addEventListener('sticky-change', e => {
+            const header = e.detail.target;  // header became sticky or stopped sticking.
+            const sticking = e.detail.stuck; // true when header is sticky.
+            header.classList.toggle('shadow', sticking); // add drop shadow when sticking.
 
-    headerBodyScroll() {
-        if (this.headerBodyElement.current.offsetTop < window.top.pageYOffset) {
-            this.setState({windowIsBelowHeader: true});
-            this.windowIsBelowHeader = true;
-        } else {
-            this.setState({windowIsBelowHeader: false});
-            this.windowIsBelowHeader = false;
-        }
-    };
+            document.querySelector('header').textContent = header.textContent;
+        });
+    }
 
     render() {
         return (
-            <div>
-                <Container ref={this.headerBodyElement}>
+            <div className="header" ref={this.header}>
+                <Container>
                     <HeaderButtons/>
 
                 </Container>
-                <AbsoluteHeader classes={this.classes} isActive={this.windowIsBelowHeader} reference={this.topHeader}/>
             </div>
         )
-    }
-}
-
-function AbsoluteHeader(props) {
-    if (props.isActive) {
-        return (
-            <Container ref={props.reference}
-                       // className={props.classes.absoluteWidthHeader}
-                       style={{position: 'fixed', top: '0', zIndex: 1000}}>
-                <HeaderButtons/>
-            </Container>
-        );
-    } else {
-        return (
-            <div/>
-        );
     }
 }
 
