@@ -12,6 +12,8 @@ import HeaderBody from './Layout/HeaderBody';
 
 // import "./header.css"
 import layer from "./images/overlay.png";
+import BodySection from "./Layout/BodySection";
+import IntroductionSection from "./Sections/IntroductionSection";
 //
 // import Projects from "./Projects";
 
@@ -25,29 +27,28 @@ const styles = theme => ({
 function DefaultPage(props) {
     let parent = props.parent;
     return (
-        <div>
-            <Row className="align-items-center justify-content-center" >
+        <div >
+            <Row className="align-items-center justify-content-center">
                 <Col xs={12} sm={9} xl={9} lg={10}
-                     style={{height: 100, backgroundColor: "red"}}>
-                    {/*xs={12} sm={9} xl={7} lg={10} md align="center"*/}
-                    {/*xs={10} elevation={0} square style={{height: '1600px'}}*/}
-                    <div>
-                        {/*<Grid container direction="column" spacing={0}>*/}
-                        {/*    <BodySection>*/}
-                        {/*        <IntroductionSection/>*/}
-                        {/*    </BodySection>*/}
+                     style={{height: 100, padding: 0}}>
+                        <BodySection>
+                            <IntroductionSection/>
+                        </BodySection>
+                    {/*<Grid container direction="column" spacing={0}>*/}
+                    {/*    <BodySection>*/}
+                    {/*        <IntroductionSection/>*/}
+                    {/*    </BodySection>*/}
 
-                        {/*    <BodySection>*/}
-                        {/*        <WorkSection onProjectOpenend={parent.openProject}*/}
-                        {/*                     work1={Projects.work1}*/}
-                        {/*                     work2={Projects.work2}*/}
-                        {/*                     work3={Projects.work3}*/}
-                        {/*                     app={props.parent}/>*/}
-                        {/*    </BodySection>*/}
-                        {/*    <ProjectPage isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}*/}
-                        {/*                 parent={parent}/>*/}
-                        {/*</Grid>*/}
-                    </div>
+                    {/*    <BodySection>*/}
+                    {/*        <WorkSection onProjectOpenend={parent.openProject}*/}
+                    {/*                     work1={Projects.work1}*/}
+                    {/*                     work2={Projects.work2}*/}
+                    {/*                     work3={Projects.work3}*/}
+                    {/*                     app={props.parent}/>*/}
+                    {/*    </BodySection>*/}
+                    {/*    <ProjectPage isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}*/}
+                    {/*                 parent={parent}/>*/}
+                    {/*</Grid>*/}
                 </Col>
             </Row>
         </div>)

@@ -1,31 +1,20 @@
 import React from 'react';
-
-const styles = theme => ({
-    root: {
-        padding: '4em 4em 2em 4em',
-    }
-});
+import {Container} from "react-bootstrap";
 
 class BodySection extends React.Component {
-    constructor(props) {
-        super(props);
-
-        const {classes} = props;
-        this.classes = classes;
-    }
-
-
-    // render() {
-    //     return (
-    //         {/*<Grid container className={this.classes.root}*/}
-    //         {/*      style={{borderBottom: 'groove', borderWidth: '0.1px', borderColor: '#d3d3d34a'}}>*/}
-    //         {/*    {this.props.children}*/}
-    //         {/*</Grid>*/}
-    //     );
-    // }
-
     render() {
-        return (<div/>);
+        return (
+            <Container
+                style={{
+                    borderBottom: 'groove',
+                    borderWidth: '0.1px',
+                    borderColor: '#d3d3d34a',
+                    backgroundColor: 'white',
+                    padding: '4em 4em 2em 4em',
+                }}>
+                {this.props.children}
+            </Container>
+        );
     }
 }
 

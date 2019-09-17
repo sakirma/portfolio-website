@@ -1,6 +1,7 @@
 import React from 'react';
 import HeaderUnderline from "../Layout/HeaderUnderline";
 import logo from "../images/logo.jpeg";
+import {Col, Row} from "react-bootstrap";
 
 // const LargeProfilePicture = withStyles({
 //     root: {
@@ -33,6 +34,19 @@ class IntroductionSection extends React.Component {
         this.classes = classes;
     }
 
+    render() {
+        return (
+          <Row>
+              <Col>
+                  <HeaderUnderline>Huseyin Caliskan</HeaderUnderline>
+              </Col>
+              <Col>
+                  Wow
+              </Col>
+          </Row>
+        );
+    }
+
     // render() {
     //     return (
     //         <Grid container spacing={0} direction="row" justify="center" alignItems="center">
@@ -54,9 +68,6 @@ class IntroductionSection extends React.Component {
     //     )
     // }
 
-    render() {
-        return (<div/>)
-    }
 }
 
 export default IntroductionSection;

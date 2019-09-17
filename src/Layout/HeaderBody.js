@@ -56,7 +56,7 @@ class HeaderBody extends React.Component {
 
     render() {
         return (
-            <div className="header">
+            <div className="header" style={{zIndex: 100}}>
                 <HeaderButtons class={this}/>
             </div>
         )
