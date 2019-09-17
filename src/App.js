@@ -24,11 +24,12 @@ const styles = theme => ({
 
 function DefaultPage(props) {
     let parent = props.parent;
-    return (<div>
-        <Container fluid>
-            <Col>
-                {/*xs={12} sm={9} xl={7} lg={10} md align="center"*/}
-                <Row>
+    return (
+        <div>
+            <Row className="align-items-center justify-content-center" >
+                <Col xs={12} sm={9} xl={9} lg={10}
+                     style={{height: 100, backgroundColor: "red"}}>
+                    {/*xs={12} sm={9} xl={7} lg={10} md align="center"*/}
                     {/*xs={10} elevation={0} square style={{height: '1600px'}}*/}
                     <div>
                         {/*<Grid container direction="column" spacing={0}>*/}
@@ -47,10 +48,9 @@ function DefaultPage(props) {
                         {/*                 parent={parent}/>*/}
                         {/*</Grid>*/}
                     </div>
-                </Row>
-            </Col>
-        </Container>
-    </div>)
+                </Col>
+            </Row>
+        </div>)
 }
 
 function ProjectPage(props) {
@@ -78,12 +78,20 @@ function ProjectPage(props) {
 
 class App extends React.Component {
     componentDidMount() {
-        window.addEventListener('scroll', (e) => this.handleScroll(e));
         this.handleStateChanged();
-    };
 
-    componentWillUnmount() {
-        window.removeEventListener('scroll', (e) => this.handleScroll(e));
+        let io = new IntersectionObserver(
+            entries => {
+                let length = this.onAfterTitleCallbacks.length;
+                for (let i = 0; i < length; i++) {
+                    this.onAfterTitleCallbacks[i](entries[0]);
+                }
+            },
+            {
+                /* Using default options. Details below */
+            }
+        );
+        io.observe(this.title.current);
     };
 
     handleScroll(event) {
@@ -111,7 +119,9 @@ class App extends React.Component {
         const {classes} = props;
         this.classes = classes;
 
-        this.onScrollCallbacks = [];
+        this.title = React.createRef();
+
+        this.onAfterTitleCallbacks = [];
 
         this.pageStates = {DefaultPage: "DefaultPage", ProjectPage: "ProjectPage"};
         this.state = {currentPageState: this.pageStates.DefaultPage};
@@ -119,6 +129,10 @@ class App extends React.Component {
 
         this.onPageStateChangedCallback = [];
     };
+
+    onAfterTitle(callback) {
+        this.onAfterTitleCallbacks.push(callback);
+    }
 
     render() {
         return (
@@ -130,13 +144,20 @@ class App extends React.Component {
             }}>
                 <Container
                     style={{height: "50vh"}}
+                    ref={this.title}
                 >
                     <Row style={{height: "100%"}}>
                         <Col className="align-self-end">
-                            <h1 className="text-center" style={{color: "white", fontFamily: "inherit", fontSize: "3.5em", paddingBottom: "1vh"}}>
+                            <h1 className="text-center" style={{
+                                color: "white",
+                                fontFamily: "inherit",
+                                fontSize: "3.5em",
+                                paddingBottom: "1vh"
+                            }}>
                                 Huseyin Caliskan
                             </h1>
-                            <p className="text-center" style={{color: "white", fontFamily: "inherit", paddingBottom: "10vh"}}>
+                            <p className="text-center"
+                               style={{color: "white", fontFamily: "inherit", paddingBottom: "10vh"}}>
                                 Just an ordinary Software Engineer
                             </p>
                         </Col>
@@ -145,7 +166,7 @@ class App extends React.Component {
 
                 <HeaderBody app={this}/>
 
-                {/*<DefaultPage parent={this}/>*/}
+                <DefaultPage parent={this}/>
             </Container>
         );
     }
