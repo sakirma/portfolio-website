@@ -15,25 +15,19 @@ function HeaderButtons(props) {
         borderBottomRightRadius: 0,
     };
     return (
-        <Row className="align-items-center justify-content-center">
-            <Col xs={12} sm={9} xl={9} lg={10} style={{padding: 0}}>
-                <Card style={headerStyle} className={"" + (c.state.isSticky ? "rounded-0" : "")}>
+        <Card style={headerStyle} className={"" + (c.state.isSticky ? "rounded-0" : "")}>
 
-                    <ButtonToolbar className="justify-content-center">
-                        <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-                            <ToggleButton variant="light" className="rounded mr-2"
-                                          value={1}>Introduction</ToggleButton>
-                            <ToggleButton variant="light" className="rounded mr-2"
-                                          value={2}>Work</ToggleButton>
-                            <ToggleButton variant="light" className="rounded mr-2" value={3}>Second
-                                Section</ToggleButton>
-                            <ToggleButton variant="light" className="rounded" value={4}>Last
-                                Section</ToggleButton>
-                        </ToggleButtonGroup>
-                    </ButtonToolbar>
-                </Card>
-            </Col>
-        </Row>
+            <ButtonToolbar className="justify-content-center">
+                <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+                    <ToggleButton variant="light" className="rounded mr-2"
+                                  value={1}>Introduction</ToggleButton>
+                    <ToggleButton variant="light" className="rounded mr-2"
+                                  value={2}>Work</ToggleButton>
+                    <ToggleButton variant="light" className="rounded mr-2" value={3}>Second Section</ToggleButton>
+                    <ToggleButton variant="light" className="rounded" value={4}>Last Section</ToggleButton>
+                </ToggleButtonGroup>
+            </ButtonToolbar>
+        </Card>
     );
 }
 

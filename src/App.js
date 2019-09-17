@@ -27,31 +27,27 @@ const styles = theme => ({
 function DefaultPage(props) {
     let parent = props.parent;
     return (
-        <div >
-            <Row className="align-items-center justify-content-center">
-                <Col xs={12} sm={9} xl={9} lg={10}
-                     style={{height: 100, padding: 0}}>
-                        <BodySection>
-                            <IntroductionSection/>
-                        </BodySection>
-                    {/*<Grid container direction="column" spacing={0}>*/}
-                    {/*    <BodySection>*/}
-                    {/*        <IntroductionSection/>*/}
-                    {/*    </BodySection>*/}
+        <div style={{height: 100, padding: 0}}>
+            <BodySection>
+                <IntroductionSection/>
+            </BodySection>
+            {/*<Grid container direction="column" spacing={0}>*/}
+            {/*    <BodySection>*/}
+            {/*        <IntroductionSection/>*/}
+            {/*    </BodySection>*/}
 
-                    {/*    <BodySection>*/}
-                    {/*        <WorkSection onProjectOpenend={parent.openProject}*/}
-                    {/*                     work1={Projects.work1}*/}
-                    {/*                     work2={Projects.work2}*/}
-                    {/*                     work3={Projects.work3}*/}
-                    {/*                     app={props.parent}/>*/}
-                    {/*    </BodySection>*/}
-                    {/*    <ProjectPage isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}*/}
-                    {/*                 parent={parent}/>*/}
-                    {/*</Grid>*/}
-                </Col>
-            </Row>
-        </div>)
+            {/*    <BodySection>*/}
+            {/*        <WorkSection onProjectOpenend={parent.openProject}*/}
+            {/*                     work1={Projects.work1}*/}
+            {/*                     work2={Projects.work2}*/}
+            {/*                     work3={Projects.work3}*/}
+            {/*                     app={props.parent}/>*/}
+            {/*    </BodySection>*/}
+            {/*    <ProjectPage isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}*/}
+            {/*                 parent={parent}/>*/}
+            {/*</Grid>*/}
+        </div>
+    )
 }
 
 function ProjectPage(props) {
@@ -165,9 +161,12 @@ class App extends React.Component {
                     </Row>
                 </Container>
 
-                <HeaderBody app={this}/>
-
-                <DefaultPage parent={this}/>
+                <Row className="justify-content-center">
+                    <Col xs={7}>
+                        <HeaderBody app={this}/>
+                        <DefaultPage parent={this}/>
+                    </Col>
+                </Row>
             </Container>
         );
     }
