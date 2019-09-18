@@ -1,7 +1,8 @@
 import React from 'react';
 import HeaderUnderline from "../Layout/HeaderUnderline";
 import logo from "../images/logo.jpeg";
-import {Col, Row} from "react-bootstrap";
+import {Col, Image, Row} from "react-bootstrap";
+import styled from "styled-components";
 
 // const LargeProfilePicture = withStyles({
 //     root: {
@@ -19,6 +20,19 @@ import {Col, Row} from "react-bootstrap";
 //
 // })(Avatar);
 
+
+// const Avatar = styled.img`
+//     &:after {
+//         background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+//         display: block;
+//         content: close-quote;
+//         width: 4.25em;
+//         height: 2px;
+//         margin: 0.7em 0 1em 0;
+//         border-radius: 2px;
+//     }
+// `;
+
 const styles = theme => ({
     // button: {
     //     margin: theme.spacing(1),
@@ -29,21 +43,26 @@ class IntroductionSection extends React.Component {
     constructor(props) {
         super(props);
 
-        const { classes } = props;
+        const {classes} = props;
 
         this.classes = classes;
     }
 
     render() {
         return (
-          <Row>
-              <Col>
-                  <HeaderUnderline>Huseyin Caliskan</HeaderUnderline>
-              </Col>
-              <Col>
-                  Wow
-              </Col>
-          </Row>
+            <Row>
+                <Col xs={8}>
+                    <HeaderUnderline>Huseyin Caliskan</HeaderUnderline>
+                    <p>
+                        Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna adipiscing magna etiam
+                        amet veroeros. Lorem ipsum dolor tempus sit cursus. Tempus nisl et nullam lorem ipsum dolor sit
+                        amet aliquam.
+                    </p>
+                </Col>
+                <Col xs={4}>
+                    <Image style={{width: '22em', padding: "0.75em"}} src={logo} roundedCircle fluid thumbnail/>
+                </Col>
+            </Row>
         );
     }
 
@@ -67,7 +86,6 @@ class IntroductionSection extends React.Component {
     //         </Grid>
     //     )
     // }
-
 }
 
 export default IntroductionSection;

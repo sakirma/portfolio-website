@@ -4,7 +4,7 @@ import {Container} from "react-bootstrap";
 class BodySection extends React.Component {
     render() {
         return (
-            <Container
+            <Container fluid
                 style={{
                     borderBottom: 'groove',
                     borderWidth: '0.1px',
