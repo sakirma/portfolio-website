@@ -47,8 +47,8 @@ class Work extends React.Component {
                 {/*                        marginBottom: "10px"*/}
                 {/*                    }}*/}
                 {/*                    src={this.props.information.thumbnail}/>*/}
-                <div style={{width: "13em", height: "13em"}}>
-                    <Image style={{width: "100%", height: "100%", objectFit: "cover", textAlign: "center"}} src={this.props.information.thumbnail} thumbnail roundedCircle/>
+                <div style={{width: "13em", height: "13em", margin: "0 auto", marginBottom: "20px"}} >
+                    <Image className="justify-content-center" style={{width: "100%", height: "100%", objectFit: "cover", textAlign: "center"}} src={this.props.information.thumbnail} thumbnail roundedCircle/>
                 </div>
                 <div style={{
                     backgroundColor: hoverStyle.backgroundColor,
@@ -61,9 +61,9 @@ class Work extends React.Component {
                      onMouseEnter={() => this.toggleHover(this, true)}
                      onMouseLeave={() => this.toggleHover(this, false)}
                      onClick={() => this.props.onProjectOpenend()}>
-                    <h3 style={{marginTop: "1em"}}>
+                    <h2 style={{marginTop: "1em"}}>
                         {this.props.information.title}
-                    </h3>
+                    </h2>
                     <p>
                         {this.props.information.text}
                     </p>

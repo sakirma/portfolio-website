@@ -9,8 +9,8 @@ class WorkSection extends React.Component {
             <div style={{width: '100%', height: '100%'}}>
                 <HeaderUnderline> Work </HeaderUnderline>
                 <Container fluid>
-                    <Row>
-                        <Col>
+                    <Row className="text-center justify-content-center">
+                        <Col className="">
                             <Work onProjectOpenend={() => this.props.onProjectOpenend(this.props.work1, this.props.app)}
                                   information={this.props.work1}/>
                         </Col>
