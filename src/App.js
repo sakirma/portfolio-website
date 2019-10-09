@@ -1,21 +1,19 @@
 import React from 'react';
 import {
     Container, Col, Row,
-    Image
+    Modal, Button
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import HeaderBody from './Layout/HeaderBody';
-// import BodySection from './Layout/BodySection';
-// import IntroductionSection from './Sections/IntroductionSection';
 import WorkSection from './Sections/WorkSection';
 
-// import "./header.css"
 import layer from "./images/overlay.png";
 import BodySection from "./Layout/BodySection";
 import IntroductionSection from "./Sections/IntroductionSection";
 
 import Projects from "./Projects";
+
 
 
 function DefaultPage(props) {
@@ -28,13 +26,11 @@ function DefaultPage(props) {
 
             <BodySection>
                 <WorkSection onProjectOpenend={parent.openProject} app={props.parent}
-                                                                     work1={Projects.work1}
-                                                                     work2={Projects.work2}
-                                                                     work3={Projects.work3}/>
+                             work1={Projects.work1}
+                             work2={Projects.work2}
+                             work3={Projects.work3}/>
+                <ProjectPage parent={parent} isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}/>
             </BodySection>
-            {/*    <ProjectPage isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}*/}
-            {/*                 parent={parent}/>*/}
-            {/*</Grid>*/}
         </div>
     )
 }
@@ -42,18 +38,30 @@ function DefaultPage(props) {
 function ProjectPage(props) {
     let parent = props.parent;
     let work = parent.currentOpenWork;
+    const [show, setShow] = React.useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     if (props.isActive) {
         return (<div>
-            {/*<Grid container direction="column" style={{height: "20em"}}>*/}
-            {/*    <Grid item xs={false} sm={12} style={{maxHeight: "15em"}}>*/}
-            {/*        <CardMedia*/}
-            {/*            className={parent.classes.media}*/}
-            {/*            image={work.pictures[0].image}*/}
-            {/*            style={work.pictures[0].styling}*/}
-            {/*        />*/}
-            {/*    </Grid>*/}
-            {/*</Grid>*/}
+                <Button variant="primary" onClick={handleShow}>
+                    Launch demo modal
+                </Button>
 
+                <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                            Close
+                        </Button>
+                        <Button variant="primary" onClick={handleClose}>
+                            Save Changes
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
         </div>);
     } else {
         return (<div>
