@@ -1,7 +1,8 @@
 import React from 'react';
 import {
     Container, Col, Row,
-    Modal, Button
+    Modal, Button, Carousel,
+    Card
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,7 +14,6 @@ import BodySection from "./Layout/BodySection";
 import IntroductionSection from "./Sections/IntroductionSection";
 
 import Projects from "./Projects";
-
 
 
 function DefaultPage(props) {
@@ -29,7 +29,8 @@ function DefaultPage(props) {
                              work1={Projects.work1}
                              work2={Projects.work2}
                              work3={Projects.work3}/>
-                <ProjectPage parent={parent} isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}/>
+                <ProjectPage parent={parent}
+                             isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}/>
             </BodySection>
         </div>
     )
@@ -38,30 +39,85 @@ function DefaultPage(props) {
 function ProjectPage(props) {
     let parent = props.parent;
     let work = parent.currentOpenWork;
-    const [show, setShow] = React.useState(false);
+    console.log(work);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
     if (props.isActive) {
-        return (<div>
-                <Button variant="primary" onClick={handleShow}>
-                    Launch demo modal
-                </Button>
+        const pictures = [];
+        for (let i = 0; i < work.pictures.length; i++) {
+            pictures.push(
+                <Carousel.Item key={i}>
+                    <img
+                        className="d-block w-100"
+                        src={work.pictures[i].image}
+                        alt={work.pictures[0].image}
+                    />
+                </Carousel.Item>);
+        }
 
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                            Save Changes
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
+        let technical = [];
+        if (work.technical.length > 0) {
+            for (let i = 0; i < work.technical.length; i++) {
+                technical.push(
+                    <li>{work.technical[i]}</li>
+                );
+            }
+        }
+
+        let resources = [];
+        if (work.resources !== undefined && work.resources.length > 0) {
+            for (let i = 0; i < work.resources.length; i++)
+                resources.push(<div key={i}>
+                    <Card.Title>
+                        <h3>Resources</h3>
+                    </Card.Title>
+                    <Card.Text>
+                        <Card.Link href={work.resources[i].url}>
+                            {work.resources[i].linkName}
+                        </Card.Link>
+                        {work.resource}
+                    </Card.Text>
+                </div>);
+        }
+
+        return (<div>
+            <Modal show={true} onHide={() => parent.closeProject(parent)} centered size="lg">
+                <Modal.Header closeButton={true} className="text-center">
+                    <Modal.Title>{work.title}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body style={{fontFamily: '"Source Sans Pro", sans-serif'}}>
+                    <Card>
+                        <Carousel>
+                            {pictures}
+                        </Carousel>
+                        <Card.Body>
+                            <Card.Title>
+                                <h2>
+                                    About This Project
+                                </h2>
+                            </Card.Title>
+                            <Card.Text>
+                                {work.text}
+                            </Card.Text>
+                            <Card.Title>
+                                <h3>
+                                    Technical Sheet
+                                </h3>
+                            </Card.Title>
+                            <Card.Text>
+                                <ul style={{listStyleType: 'circle', paddingLeft: '20px'}}>
+                                    {technical}
+                                </ul>
+                            </Card.Text>
+                            {resources}
+                        </Card.Body>
+                    </Card>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => parent.closeProject(parent)}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>);
     } else {
         return (<div>
@@ -95,6 +151,11 @@ class App extends React.Component {
     openProject(work, app) {
         app.setState({currentPageState: app.pageStates.ProjectPage});
         app.currentOpenWork = work;
+    }
+
+    closeProject(app) {
+        app.setState({currentPageState: app.pageStates.DefaultPage});
+        app.currentOpenWork = null;
     }
 
     constructor(props) {

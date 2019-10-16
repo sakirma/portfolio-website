@@ -13,20 +13,27 @@ export default {
             "veroeros sed consequat.\n" +
             "Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus\n" +
             "veroeros sed consequat.",
-        pictures: [ { image: bannerlord1, styling: {backgroundPosition: "bottom"} }],
+        technical: ["C++", "C#"],
+        resources: [{linkName: "TaleWorlds", url: "https://www.taleworlds.com/en/Games/Bannerlord"}],
+        pictures: [{image: bannerlord1, styling: {backgroundPosition: "bottom"}},
+            {image: bannerlord, styling: {}}],
     },
     work2: {
         thumbnail: "",
         title: "",
         headerText: "",
-        Text: "",
+        text: "",
+        technical: [],
+        resources: [],
         pictures: [],
     },
     work3: {
         thumbnail: "",
         title: "",
         headerText: "",
-        Text: "",
+        text: "",
+        technical: [],
+        resources: [],
         pictures: [],
     },
 

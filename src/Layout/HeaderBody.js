@@ -1,5 +1,5 @@
 import React from 'react';
-import {ButtonToolbar, Card, Col, Container, Row, ToggleButton, ToggleButtonGroup} from "react-bootstrap";
+import {ButtonToolbar, Card, ToggleButton, ToggleButtonGroup} from "react-bootstrap";
 
 import "../header.css"
 
