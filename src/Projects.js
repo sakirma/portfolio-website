@@ -7,12 +7,10 @@ export default {
         thumbnail: bannerlord,
         title: "Bannerlord",
         headerText: "My internship at TaleWorlds",
-        text: "Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus\n" +
-            "veroeros sed consequat.\n" +
-            "Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus\n" +
-            "veroeros sed consequat.\n" +
-            "Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus\n" +
-            "veroeros sed consequat.",
+        text: "Nemo dubitet me cum domno meo episcopo sentire et omnia damnare quae damnat, " +
+            "et nihil eius praeferre sapientiae nisi solum deum. Atque ideo nolo ne dubitetis aliud me esse facturum, aliud sensurum quam quod " +
+            "professus est ac perinde quomodo dixit quem sequor episcopus meus. " +
+            "Quidquid ille damnavit, et ego damno. ",
         technical: ["C++", "C#"],
         resources: [{linkName: "TaleWorlds", url: "https://www.taleworlds.com/en/Games/Bannerlord"}],
         pictures: [{image: bannerlord1, styling: {backgroundPosition: "bottom"}},
