@@ -11,7 +11,7 @@ export default {
             "et nihil eius praeferre sapientiae nisi solum deum. Atque ideo nolo ne dubitetis aliud me esse facturum, aliud sensurum quam quod " +
             "professus est ac perinde quomodo dixit quem sequor episcopus meus. " +
             "Quidquid ille damnavit, et ego damno. ",
-        technical: ["C++", "C#"],
+        technical: ["C++", "C#", "", "Plastic SCM"],
         resources: [{linkName: "TaleWorlds", url: "https://www.taleworlds.com/en/Games/Bannerlord"}],
         pictures: [{image: bannerlord1, styling: {backgroundPosition: "bottom"}},
             {image: bannerlord, styling: {}}],

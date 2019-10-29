@@ -1,8 +1,6 @@
 import React from 'react';
 import {
     Container, Col, Row,
-    Modal, Button, Carousel,
-    Card
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -38,7 +36,7 @@ function DefaultPage(props) {
 }
 
 function ProjectPage(props) {
-    return(<FavoriteProjectPage parent={props}/>)
+    return(<FavoriteProjectPage parent={props} isActive={props.isActive}/>)
 }
 
 class App extends React.Component {

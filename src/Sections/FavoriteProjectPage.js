@@ -1,16 +1,16 @@
 import React from "react";
 import {Button, Card, Carousel, Image, Modal} from 'react-bootstrap';
 
-class FavoriteProjectPage extends React.Component
-{
+class FavoriteProjectPage extends React.Component {
     constructor(props) {
         super(props);
 
     }
 
     render() {
-        let parent = this.props.parent;
+        let parent = this.props.parent.parent;
         let work = parent.currentOpenWork;
+        console.log(parent);
         console.log(work);
 
         if (this.props.isActive) {
@@ -29,9 +29,16 @@ class FavoriteProjectPage extends React.Component
             let technical = [];
             if (work.technical.length > 0) {
                 for (let i = 0; i < work.technical.length; i++) {
-                    technical.push(
-                        <li>{work.technical[i]}</li>
-                    );
+                    const s = work.technical[i];
+
+                    if (s !== "")
+                        technical.push(
+                            <li>{s}</li>
+                        );
+                    else
+                        technical.push(
+                            <br/>
+                        );
                 }
             }
 
@@ -43,7 +50,7 @@ class FavoriteProjectPage extends React.Component
                             <h3>Resources</h3>
                         </Card.Title>
                         <Card.Text>
-                            <Card.Link href={work.resources[i].url}>
+                            <Card.Link href={work.resources[i].url} target="_blank">
                                 {work.resources[i].linkName}
                             </Card.Link>
                             {work.resource}

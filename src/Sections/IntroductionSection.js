@@ -16,11 +16,25 @@ class IntroductionSection extends React.Component {
         return (
             <Row>
                 <Col xs={8}>
-                    <HeaderUnderline>Huseyin Caliskan</HeaderUnderline>
+                    <HeaderUnderline>About me</HeaderUnderline>
                     <p>
-                        Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna adipiscing magna etiam
-                        amet veroeros. Lorem ipsum dolor tempus sit cursus. Tempus nisl et nullam lorem ipsum dolor sit
-                        amet aliquam.
+                        My name is Huseyin Caliskan and I love programming, hanging out with my friends, travelling around the world, working out in the gym, playing guitar in my room although I won't be joining a band anytime soon.<br/>
+                    </p>
+                    <p>
+                        I am a Full Stack Developer who is most proficient in working with:
+                        <ul style={{'columnCount': 2, marginTop: '15px'}}>
+                            <li>C# & C++</li>
+                            <li>Java</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>HTML & (S)CSS</li>
+                            <li>React</li>
+                            <li>Vue</li>
+                            <li>MYSQL & MSSQL</li>
+                            <li>PHP</li>
+                        </ul>
+                        Because of my studious nature I am continuing to broaden my horizons everyday.<br/><br/>
+                        Thank you,<br/>
+                        Huseyin Caliskan
                     </p>
                 </Col>
                 <Col xs={4}>
