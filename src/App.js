@@ -38,7 +38,7 @@ function DefaultPage(props) {
 }
 
 function ProjectPage(props) {
-    return(<FavoriteProjectPage props={props}/>)
+    return(<FavoriteProjectPage parent={props}/>)
 }
 
 class App extends React.Component {

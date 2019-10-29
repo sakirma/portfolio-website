@@ -5,13 +5,15 @@ class FavoriteProjectPage extends React.Component
 {
     constructor(props) {
         super(props);
+
     }
+
     render() {
-        let parent = props.parent;
+        let parent = this.props.parent;
         let work = parent.currentOpenWork;
         console.log(work);
 
-        if (props.isActive) {
+        if (this.props.isActive) {
             const pictures = [];
             for (let i = 0; i < work.pictures.length; i++) {
                 pictures.push(
@@ -97,3 +99,4 @@ class FavoriteProjectPage extends React.Component
     }
 }
 
+export default FavoriteProjectPage;
