@@ -22,19 +22,19 @@ class IntroductionSection extends React.Component {
                     </p>
                     <p>
                         I am a Full Stack Developer who is most proficient in working with:
-                        <ul style={{'columnCount': 2, marginTop: '15px'}}>
-                            <li>C# & C++</li>
-                            <li>Java</li>
-                            <li>JavaScript (ES6+)</li>
-                            <li>HTML & (S)CSS</li>
-                            <li>React</li>
-                            <li>Vue</li>
-                            <li>MYSQL & MSSQL</li>
-                            <li>PHP</li>
-                        </ul>
-                        Because of my studious nature I am continuing to broaden my horizons everyday.<br/><br/>
-                        Thank you,<br/>
-                        Huseyin Caliskan
+                    </p>
+                    <ul style={{'columnCount': 2, marginTop: '15px'}}>
+                        <li>C# & C++</li>
+                        <li>Java</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>HTML & (S)CSS</li>
+                        <li>React</li>
+                        <li>Vue</li>
+                        <li>MYSQL & MSSQL</li>
+                        <li>PHP</li>
+                    </ul>
+                    <p>
+                        Because of my studious nature I am continuing to broaden my horizons everyday.
                     </p>
                 </Col>
                 <Col xs={4}>

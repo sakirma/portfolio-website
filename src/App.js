@@ -10,33 +10,13 @@ import WorkSection from './Sections/WorkSection';
 import layer from "./images/overlay.png";
 import BodySection from "./Layout/BodySection";
 import IntroductionSection from "./Sections/IntroductionSection";
-import FavoriteProjectPage from "./Sections/FavoriteProjectPage";
+import ProjectPage from "./Sections/ProjectPage";
 
 import Projects from "./Projects";
 
 
-function DefaultPage(props) {
-    let parent = props.parent;
-    return (
-        <div style={{padding: 0}}>
-            <BodySection>
-                <IntroductionSection/>
-            </BodySection>
-
-            <BodySection>
-                <WorkSection onProjectOpenend={parent.openProject} app={props.parent}
-                             work1={Projects.work1}
-                             work2={Projects.work2}
-                             work3={Projects.work3}/>
-                <ProjectPage parent={parent}
-                             isActive={parent.state.currentPageState === parent.pageStates.ProjectPage}/>
-            </BodySection>
-        </div>
-    )
-}
-
-function ProjectPage(props) {
-    return(<FavoriteProjectPage parent={props} isActive={props.isActive}/>)
+function WorkModal(props) {
+    return(<ProjectPage parent={props} isActive={props.isActive}/>)
 }
 
 class App extends React.Component {
@@ -129,7 +109,20 @@ class App extends React.Component {
                                 <HeaderBody app={this}/>
                             </Col>
                             <Col>
-                                <DefaultPage parent={this}/>
+                                <div style={{padding: 0}}>
+                                    <BodySection>
+                                        <IntroductionSection/>
+                                    </BodySection>
+
+                                    <BodySection>
+                                        <WorkSection onProjectOpenend={this.openProject} app={this}
+                                                     work1={Projects.work1}
+                                                     work2={Projects.work2}
+                                                     work3={Projects.work3}/>
+                                        <WorkModal parent={this}
+                                                   isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
+                                    </BodySection>
+                                </div>
                             </Col>
                         </Container>
                     </Col>

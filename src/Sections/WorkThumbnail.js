@@ -1,7 +1,7 @@
 import React from "react";
 import {Image} from 'react-bootstrap';
 
-class Work extends React.Component {
+class WorkThumbnail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,6 +21,12 @@ class Work extends React.Component {
             hoverStyle = {backgroundColor: "rgba(0, 0, 0, 0.0)", cursor: 'default'}
         }
 
+        if(this.props.work === undefined)
+        {
+            return (<div> </div>);
+        }
+
+
         return (
             <div>
                 <div style={{width: "13em", height: "13em", margin: "0 auto", marginBottom: "0px"}}>
@@ -36,7 +42,7 @@ class Work extends React.Component {
                                cursor: hoverStyle.cursor,
                                backgroundColor: hoverStyle.backgroundColor
                            }}
-                           src={this.props.information.thumbnail}
+                           src={this.props.work.thumbnail}
                            thumbnail
                            roundedCircle/>
                 </div>
@@ -49,10 +55,10 @@ class Work extends React.Component {
                      onMouseLeave={() => this.toggleHover(this, false)}
                      onClick={() => this.props.onProjectOpenend()}>
                     <h2 style={{marginTop: "0.5em"}}>
-                        {this.props.information.title}
+                        {this.props.work.titleName}
                     </h2>
                     <p>
-                        {this.props.information.text}
+                        {this.props.work.description}
                     </p>
                 </div>
             </div>
@@ -60,4 +66,4 @@ class Work extends React.Component {
     }
 }
 
-export default Work;
+export default WorkThumbnail;

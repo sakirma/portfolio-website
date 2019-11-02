@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderUnderline from "../Layout/HeaderUnderline";
 import {Container, Col, Row} from 'react-bootstrap';
-import Work from "./Work"
+import WorkThumbnail from "./WorkThumbnail"
 
 class WorkSection extends React.Component {
     render() {
@@ -11,16 +11,16 @@ class WorkSection extends React.Component {
                 <Container fluid>
                     <Row className="text-center justify-content-center">
                         <Col className="">
-                            <Work onProjectOpenend={() => this.props.onProjectOpenend(this.props.work1, this.props.app)}
-                                  information={this.props.work1}/>
+                            <WorkThumbnail onProjectOpenend={() => this.props.onProjectOpenend(this.props.work1, this.props.app)}
+                                           work={this.props.work1}/>
                         </Col>
                         <Col>
-                            <Work onProjectOpenend={() => this.props.onProjectOpenend(this.props.work2, this.props.app)}
-                                  information={this.props.work2}/>
+                            <WorkThumbnail onProjectOpenend={() => this.props.onProjectOpenend(this.props.work2, this.props.app)}
+                                           work={this.props.work2}/>
                         </Col>
                         <Col>
-                            <Work onProjectOpenend={() => this.props.onProjectOpenend(this.props.work3, this.props.app)}
-                                  information={this.props.work3}/>
+                            <WorkThumbnail onProjectOpenend={() => this.props.onProjectOpenend(this.props.work3, this.props.app)}
+                                           work={this.props.work3}/>
                         </Col>
                     </Row>
                 </Container>
