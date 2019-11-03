@@ -22,3 +22,13 @@
 .header-sticky {
     color: red !important;
 }
+
+.social-button {
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    padding: 0;
+    align-self: center;
+    margin-left: 15px;
+    color: #000000ad;
+}

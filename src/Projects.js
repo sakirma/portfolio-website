@@ -1,4 +1,3 @@
-import React from "react";
 import Bannerlord from './Work/Bannerlord/Bannerlord';
 
 export default {

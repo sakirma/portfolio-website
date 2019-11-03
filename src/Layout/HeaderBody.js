@@ -1,7 +1,8 @@
 import React from 'react';
-import {ButtonToolbar, Card, ToggleButton, ToggleButtonGroup} from "react-bootstrap";
+import {ButtonToolbar, Card, ToggleButton, ToggleButtonGroup, Button} from "react-bootstrap";
 
 import "../header.css"
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 class HeaderBody extends React.Component {
     constructor(props) {
@@ -32,6 +33,15 @@ class HeaderBody extends React.Component {
         return (
             <Card style={headerStyle} className={"" + (this.state.isSticky ? "rounded-0" : "")}>
                 <ButtonToolbar className="justify-content-center">
+                    <div className="social-button">
+                        <Button className="btn-light" style={{padding: '0', paddingRight: '3px', border: '0', backgroundColor: 'transparent'}}  target="_blank" href="https://github.com/sakirma">
+                            <i className="fab fa-2x fa-github-square"/>
+                        </Button>
+                        <Button className="btn-light" style={{padding: '0', border: '0', backgroundColor: 'transparent'}}  target="_blank" href="https://www.linkedin.com/in/huseyin-caliskan/">
+                            <i className="fab fa-2x fa-linkedin"/>
+                        </Button>
+                    </div>
+
                     <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
                         <ToggleButton variant="light" className="rounded mr-2"
                                       value={1}>Introduction</ToggleButton>
