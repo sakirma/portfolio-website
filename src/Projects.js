@@ -1,8 +1,10 @@
 import Bannerlord from './Work/Bannerlord/Bannerlord';
+import Roadleaf from './Work/Roadleaf/Roadleaf';
+import CapitolaVRDigital from "./Work/CapitolaVRDigital/CapitolaVRDigital";
 
 export default {
     // Fav Work
     work1: new Bannerlord(),
-    work2: new Bannerlord(),
-    work3: new Bannerlord(),
+    work2: new Roadleaf(),
+    work3: new CapitolaVRDigital(),
 }

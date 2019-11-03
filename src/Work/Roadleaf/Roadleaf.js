@@ -2,45 +2,49 @@ import React from "react";
 import WorkBase from "../WorkBase";
 import {Card, Carousel, Modal} from 'react-bootstrap';
 
-import pic1 from "./Bannerlord wallpaper.jpg";
-import pic2 from "./Bannerlord1.jpg";
+import thumbnail from "./roadleaf logo.png";
+import pic1 from "./roadleaf front page.png";
+import pic2 from "./roadleaf pin selected.png";
+import pic3 from "./roadleaf front page.png";
+import pic4 from "./roadleaf CMS.png";
 
-
-class Bannerlord extends WorkBase {
+class Roadleaf extends WorkBase {
     constructor(props) {
         super(props);
 
-        this.thumbnail = pic1;
-        this.titleName = "Bannerlord";
-        this.description = "My internship at TaleWorlds, Core Mechanic Team";
+        this.thumbnail = thumbnail;
+        this.titleName = "Roadleaf";
+        this.description = "A Web application done together with the students of HAS University of Applied Sciences";
+
+        this.pictures = [pic1, pic2, pic3, pic4];
+        this.carouselItems = [];
+
+        for (let i = 0; i < this.pictures.length; i++) {
+            this.carouselItems.push(
+                <Carousel.Item key={i}>
+                    <img
+                        className="d-block w-100"
+                        src={this.pictures[i]}
+                        alt={pic1}
+                    />
+                </Carousel.Item>);
+        }
+
     }
 
     getReactElement() {
-        return <Bannerlord/>
+        return <Roadleaf/>
     }
 
     render() {
         return (<div>
             <Modal.Header closeButton={true} className="text-center">
-                <Modal.Title>Bannerlord</Modal.Title>
+                <Modal.Title>Roadleaf</Modal.Title>
             </Modal.Header>
             <Modal.Body style={{fontFamily: '"Source Sans Pro", sans-serif'}}>
                 <Card>
                     <Carousel>
-                        <Carousel.Item key={0}>
-                            <img
-                                className="d-block w-100"
-                                src={pic1}
-                                alt={pic1}
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item key={1}>
-                            <img
-                                className="d-block w-100"
-                                src={pic2}
-                                alt={pic2}
-                            />
-                        </Carousel.Item>
+                        {this.carouselItems}
                     </Carousel>
                     <Card.Body>
                         <Card.Title>
@@ -62,22 +66,34 @@ class Bannerlord extends WorkBase {
                         </Card.Title>
                         <ul style={{listStyleType: 'circle', paddingLeft: '20px'}}>
                             <li>
-                                C++
+                                PHP
                             </li>
                             <li>
-                                C#
+                                Javascript
+                            </li>
+                            <li>
+                                MYSQL
                             </li>
                             <br/>
                             <li>
-                                Plastic SCM
+                                Docker
+                            </li>
+                            <li>
+                                Laravel
+                            </li>
+                            <li>
+                                Vue
+                            </li>
+                            <li>
+                                Git
                             </li>
                         </ul>
                         <Card.Title>
                             <h3>Resources</h3>
                         </Card.Title>
                         <Card.Text>
-                            <Card.Link href="https://www.taleworlds.com/en/Games/Bannerlord" target="_blank">
-                                TaleWorlds
+                            <Card.Link href="https://github.com/sakirma/Avans-Has-2019" target="_blank">
+                                Github Page
                             </Card.Link>
                         </Card.Text>
                     </Card.Body>
@@ -87,4 +103,4 @@ class Bannerlord extends WorkBase {
     }
 }
 
-export default Bannerlord;
+export default Roadleaf;

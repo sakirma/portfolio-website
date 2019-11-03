@@ -2,27 +2,26 @@ import React from "react";
 import WorkBase from "../WorkBase";
 import {Card, Carousel, Modal} from 'react-bootstrap';
 
-import pic1 from "./Bannerlord wallpaper.jpg";
-import pic2 from "./Bannerlord1.jpg";
 
+import thumbnail from "./capitola-vr-logo-black.png";
 
-class Bannerlord extends WorkBase {
+class CapitolaVRDigital extends WorkBase {
     constructor(props) {
         super(props);
 
-        this.thumbnail = pic1;
-        this.titleName = "Bannerlord";
-        this.description = "My internship at TaleWorlds, Core Mechanic Team";
+        this.thumbnail = thumbnail;
+        this.titleName = "Capitola VR Digital";
+        this.description = "My internship at Capitola VR Digital, Virtual/Augmented Reality Developer";
     }
 
     getReactElement() {
-        return <Bannerlord/>
+        return <CapitolaVRDigital/>
     }
 
     render() {
-        return (<div>
+        return(<div>
             <Modal.Header closeButton={true} className="text-center">
-                <Modal.Title>Bannerlord</Modal.Title>
+                <Modal.Title>Roadleaf</Modal.Title>
             </Modal.Header>
             <Modal.Body style={{fontFamily: '"Source Sans Pro", sans-serif'}}>
                 <Card>
@@ -30,15 +29,8 @@ class Bannerlord extends WorkBase {
                         <Carousel.Item key={0}>
                             <img
                                 className="d-block w-100"
-                                src={pic1}
-                                alt={pic1}
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item key={1}>
-                            <img
-                                className="d-block w-100"
-                                src={pic2}
-                                alt={pic2}
+                                src={thumbnail}
+                                alt={thumbnail}
                             />
                         </Carousel.Item>
                     </Carousel>
@@ -62,22 +54,34 @@ class Bannerlord extends WorkBase {
                         </Card.Title>
                         <ul style={{listStyleType: 'circle', paddingLeft: '20px'}}>
                             <li>
-                                C++
+                                PHP
                             </li>
                             <li>
-                                C#
+                                Javascript
+                            </li>
+                            <li>
+                                MYSQL
                             </li>
                             <br/>
                             <li>
-                                Plastic SCM
+                                Docker
+                            </li>
+                            <li>
+                                Laravel
+                            </li>
+                            <li>
+                                Vue
+                            </li>
+                            <li>
+                                Git
                             </li>
                         </ul>
                         <Card.Title>
                             <h3>Resources</h3>
                         </Card.Title>
                         <Card.Text>
-                            <Card.Link href="https://www.taleworlds.com/en/Games/Bannerlord" target="_blank">
-                                TaleWorlds
+                            <Card.Link href="https://github.com/sakirma/Avans-Has-2019" target="_blank">
+                                Github Page
                             </Card.Link>
                         </Card.Text>
                     </Card.Body>
@@ -87,4 +91,4 @@ class Bannerlord extends WorkBase {
     }
 }
 
-export default Bannerlord;
+export default CapitolaVRDigital;
