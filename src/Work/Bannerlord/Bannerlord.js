@@ -49,11 +49,11 @@ class Bannerlord extends WorkBase {
                             </h2>
                         </Card.Title>
                         <Card.Text>
-                            Nemo dubitet me cum domno meo episcopo sentire et omnia damnare quae damnat,
-                            et nihil eius praeferre sapientiae nisi solum deum. Atque ideo nolo ne dubitetis aliud me
-                            esse facturum, aliud sensurum quam quod
-                            professus est ac perinde quomodo dixit quem sequor episcopus meus.
-                            Quidquid ille damnavit, et ego damno.
+                            TaleWorlds Entertainment, creator of my favourite game Mound & Blade: Warband, gave me the chance to work with them on their next title 'Mount & Blade 2: Bannerlord'.
+                            I worked in the Core Mechanic team. Certain tasks were given to me and I had to dive into the code of their game engine to be able to finish these tasks.
+                            This made me strong at reading and understanding codes and as well as changing or adding code without making mistakes.
+                            <br/>
+                            This internship was in Turkey, Ankara.
                         </Card.Text>
                         <Card.Title>
                             <h3>

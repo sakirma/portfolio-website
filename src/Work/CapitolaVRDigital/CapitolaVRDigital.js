@@ -41,11 +41,10 @@ class CapitolaVRDigital extends WorkBase {
                             </h2>
                         </Card.Title>
                         <Card.Text>
-                            Nemo dubitet me cum domno meo episcopo sentire et omnia damnare quae damnat,
-                            et nihil eius praeferre sapientiae nisi solum deum. Atque ideo nolo ne dubitetis aliud me
-                            esse facturum, aliud sensurum quam quod
-                            professus est ac perinde quomodo dixit quem sequor episcopus meus.
-                            Quidquid ille damnavit, et ego damno.
+                            This was my first internship as a Developer.
+                            <br/>
+                            Virtual Reality and Augmented reality was born and new to the market, and Capitola VR Digital capitalized on this opportunity. Their team of developers worked for their clients, so their goal was to develop a VR/AR product.
+                            My goal was to explore the potentials of Virtual Reality and Augmented Reality, so I had to deliver a prototype every week. This was really exciting and fun!
                         </Card.Text>
                         <Card.Title>
                             <h3>
@@ -54,34 +53,34 @@ class CapitolaVRDigital extends WorkBase {
                         </Card.Title>
                         <ul style={{listStyleType: 'circle', paddingLeft: '20px'}}>
                             <li>
-                                PHP
+                                C#
                             </li>
                             <li>
-                                Javascript
-                            </li>
-                            <li>
-                                MYSQL
-                            </li>
-                            <br/>
-                            <li>
-                                Docker
-                            </li>
-                            <li>
-                                Laravel
-                            </li>
-                            <li>
-                                Vue
+                                Unity3D
                             </li>
                             <li>
                                 Git
+                            </li>
+                            <br/>
+                            <li>
+                                HTC Vive
+                            </li>
+                            <li>
+                                Ocolus Rift
+                            </li>
+                            <li>
+                                Hololens
+                            </li>
+                            <li>
+                                Manus VR Gloves
                             </li>
                         </ul>
                         <Card.Title>
                             <h3>Resources</h3>
                         </Card.Title>
                         <Card.Text>
-                            <Card.Link href="https://github.com/sakirma/Avans-Has-2019" target="_blank">
-                                Github Page
+                            <Card.Link href="https://capitola.nl/" target="_blank">
+                                Page
                             </Card.Link>
                         </Card.Text>
                     </Card.Body>

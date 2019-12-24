@@ -29,7 +29,6 @@ class Roadleaf extends WorkBase {
                     />
                 </Carousel.Item>);
         }
-
     }
 
     getReactElement() {
@@ -53,11 +52,10 @@ class Roadleaf extends WorkBase {
                             </h2>
                         </Card.Title>
                         <Card.Text>
-                            Nemo dubitet me cum domno meo episcopo sentire et omnia damnare quae damnat,
-                            et nihil eius praeferre sapientiae nisi solum deum. Atque ideo nolo ne dubitetis aliud me
-                            esse facturum, aliud sensurum quam quod
-                            professus est ac perinde quomodo dixit quem sequor episcopus meus.
-                            Quidquid ille damnavit, et ego damno.
+                            Avans Hogeschool and HAS Hogeschool started together on a new project. In this project, students are chosen from both schools and they have to work together to create a product for a client.
+                            We received a client at the start of the project and we immediately set up a meeting together and sketched his idea into a product plan. SCRUM method was used for this project and every week a meeting was held off to show the progress to the client.
+                            <br/>
+                            The product was about a website which was used to explore the environment of South-Holland. South-Holland has a lot of special places which are not known for a lot of inhabitants. We made a website for a geographer and this allowed the client to easily draw on the map and add information to them.
                         </Card.Text>
                         <Card.Title>
                             <h3>
