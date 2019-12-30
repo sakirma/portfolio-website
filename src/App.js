@@ -78,7 +78,7 @@ class App extends React.Component {
                 minHeight: "100vh",
                 minWidth: "100%",
                 fontFamily: "'Source Sans Pro', sans-serif",
-                backgroundImage: 'url(' + layer + ') ,linear-gradient(45deg, #e37682 15%, #5f4d93 85%)'
+                backgroundImage: 'url(' + layer + ') ,linear-gradient(45deg, #9f424c 15%, #5f4d93 85%)'
             }}>
                 <Container
                     style={{height: "50vh"}}
@@ -117,6 +117,14 @@ class App extends React.Component {
                                     <BodySection>
                                         <WorkSection onProjectOpenend={this.openProject} app={this}
                                                      work1={Projects.work1}
+                                                     work2={Projects.work2}
+                                                     work3={Projects.work3}/>
+                                        <WorkModal parent={this}
+                                                   isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
+                                    </BodySection>
+                                    <BodySection>
+                                        <WorkSection onProjectOpenend={this.openProject} app={this}
+                                                     work1={Projects.work4}
                                                      work2={Projects.work2}
                                                      work3={Projects.work3}/>
                                         <WorkModal parent={this}

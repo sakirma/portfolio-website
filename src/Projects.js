@@ -5,6 +5,10 @@ import CapitolaVRDigital from "./Work/CapitolaVRDigital/CapitolaVRDigital";
 export default {
     // Fav Work
     work1: new Bannerlord(),
-    work2: new Roadleaf(),
-    work3: new CapitolaVRDigital(),
+    work2: new CapitolaVRDigital(),
+    work3: new Roadleaf(),
+
+    work4: null,
+    work5: null,
+    work6: null
 }

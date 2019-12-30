@@ -12,6 +12,8 @@ class IntroductionSection extends React.Component {
         this.classes = classes;
     }
 
+    // TODO: Make color less bright
+
     render() {
         return (
             <Row>
