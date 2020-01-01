@@ -8,7 +8,4 @@ export default {
     work2: new CapitolaVRDigital(),
     work3: new Roadleaf(),
 
-    work4: null,
-    work5: null,
-    work6: null
 }
