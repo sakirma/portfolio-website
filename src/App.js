@@ -4,6 +4,7 @@ import {
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import HeaderBody from './Layout/HeaderBody';
 import WorkSection from './Sections/WorkSection';
 
@@ -66,6 +67,7 @@ class App extends React.Component {
         this.currentOpenWork = null;
 
         this.onPageStateChangedCallback = [];
+
     };
 
     onAfterTitle(callback) {
@@ -103,7 +105,7 @@ class App extends React.Component {
                 </Container>
 
                 <Row className="justify-content-center">
-                    <Col xs={7}>
+                    <Col xs={12} lg={12} xl={11} style={{maxWidth: 1450, padding: 0}}>
                         <Container fluid>
                             <Col className="header" style={{zIndex: 100}}>
                                 <HeaderBody app={this}/>
