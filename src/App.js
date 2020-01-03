@@ -102,9 +102,10 @@ class App extends React.Component {
                 minHeight: "100vh",
                 minWidth: "100%",
                 fontFamily: "'Source Sans Pro', sans-serif",
-                backgroundImage: 'url(' + layer + ') ,linear-gradient(45deg, #9f424c 15%, #5f4d93 85%)'
+                backgroundImage: 'url(' + layer + ') ,linear-gradient(45deg, #9f424c 15%, #5f4d93 85%)',
+                paddingBottom: '2em'
             }}>
-                <Container style={{height: this.isMobile() ? "30vh" : "50vh"}} ref={this.title}>
+                <Container style={{height: this.isMobile() ? "35vh" : "50vh"}} ref={this.title}>
                     <Row style={{height: "100%"}}>
                         <Col className="align-self-end">
                             <h1 className="text-center" style={{
@@ -165,14 +166,13 @@ class App extends React.Component {
                                                    isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
                                     </BodySection>
                                 </div>
-                                < /Col>
+                            </Col>
                         </Container>
                     </Col>
                 </Row>
             </Container>
-
-    );
+        );
     }
-    }
+}
 
-    export default App;
+export default App;
