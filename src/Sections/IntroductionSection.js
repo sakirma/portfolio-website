@@ -15,7 +15,7 @@ class IntroductionSection extends React.Component {
     }
 
     render() {
-        const isHorizontal =!this.application.isMobile();
+        const isHorizontal = !this.application.isMobile();
 
         return (
             <div>
@@ -61,10 +61,13 @@ class IntroductionSection extends React.Component {
                                            thumbnail/>
                                 </Col>
                             </Row>
-                            <Row xs={8} className="justify-content-center">
-                                <div style={{paddingTop: '2em'}}>
-                                    <HeaderUnderline>About me</HeaderUnderline>
-                                </div>
+                            <Col>
+                                <Row xs={8} className="justify-content-center">
+                                    <div style={{paddingTop: '2em'}}>
+                                        <HeaderUnderline>About me</HeaderUnderline>
+                                    </div>
+                                </Row>
+
                                 <p>
                                     My name is Huseyin Caliskan and I love programming, hanging out with my friends,
                                     travelling
@@ -75,22 +78,21 @@ class IntroductionSection extends React.Component {
                                 <p>
                                     I am a Full Stack Developer who is most proficient in working with:
                                 </p>
-                                <Col>
-                                    <ul style={{'columnCount': 2, marginTop: '15px'}}>
-                                        <li>C# & C++</li>
-                                        <li>Java</li>
-                                        <li>JavaScript (ES6+)</li>
-                                        <li>HTML & (S)CSS</li>
-                                        <li>React</li>
-                                        <li>Vue</li>
-                                        <li>MYSQL & MSSQL</li>
-                                        <li>PHP</li>
-                                    </ul>
-                                </Col>
+                                <ul style={{'columnCount': 2, marginTop: '15px'}}>
+                                    <li>C# & C++</li>
+                                    <li>Java</li>
+                                    <li>JavaScript (ES6+)</li>
+                                    <li>HTML & (S)CSS</li>
+                                    <li>React</li>
+                                    <li>Vue</li>
+                                    <li>MYSQL & MSSQL</li>
+                                    <li>PHP</li>
+                                </ul>
                                 <p>
                                     Because of my studious nature I am continuing to broaden my horizons everyday.
                                 </p>
-                            </Row>
+                            </Col>
+
                         </Col>
                     )
                 }

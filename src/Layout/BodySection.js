@@ -20,7 +20,7 @@ class BodySection extends React.Component {
             this.styles['borderBottomWidth'] = '0.8px';
             this.styles['borderColor'] = '#d3d3d34a';
             this.styles['backgroundColor'] = 'white';
-            this.styles['padding'] = '4em 4em 2em 4em';
+            this.styles['padding'] = '2em 0em';
         }
     }
 
