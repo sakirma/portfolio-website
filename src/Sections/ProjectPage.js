@@ -5,8 +5,6 @@ class ProjectPage extends React.Component {
     render() {
         let parent = this.props.parent.parent;
         let work = parent.currentOpenWork;
-        console.log(parent);
-        console.log(work);
 
         if (this.props.isActive) {
             return (<div>

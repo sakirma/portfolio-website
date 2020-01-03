@@ -11,28 +11,11 @@ class IntroductionSection extends React.Component {
         const {classes} = props;
 
         this.classes = classes;
-        this.state = {
-            isHorizontal: false
-        };
-
-        this.updatePredicate = this.updatePredicate.bind(this);
-    }
-
-    componentDidMount() {
-        this.updatePredicate();
-        window.addEventListener("resize", this.updatePredicate);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener("resize", this.updatePredicate);
-    }
-
-    updatePredicate() {
-        this.setState({isHorizontal: !(window.innerWidth < 1000)});
+        this.application = props.app;
     }
 
     render() {
-        const isHorizontal = this.state.isHorizontal;
+        const isHorizontal =!this.application.isMobile();
 
         return (
             <div>
@@ -73,7 +56,7 @@ class IntroductionSection extends React.Component {
                     ) : (
                         <Col>
                             <Row className="justify-content-center">
-                                <Col xs={7}>
+                                <Col xs={9} sm={7}>
                                     <Image style={{width: '22em', padding: "0.75em"}} src={logo} roundedCircle fluid
                                            thumbnail/>
                                 </Col>

@@ -17,7 +17,7 @@ import Projects from "./Projects";
 
 
 function WorkModal(props) {
-    return(<ProjectPage parent={props} isActive={props.isActive}/>)
+    return (<ProjectPage parent={props} isActive={props.isActive}/>)
 }
 
 class App extends React.Component {
@@ -32,7 +32,11 @@ class App extends React.Component {
                 }
             }
         );
+
         io.observe(this.title.current);
+
+        this.updatePredicate();
+        window.addEventListener("resize", this.updatePredicate);
     };
 
     handleStateChanged() {
@@ -63,18 +67,36 @@ class App extends React.Component {
         this.onAfterTitleCallbacks = [];
 
         this.pageStates = {DefaultPage: "DefaultPage", ProjectPage: "ProjectPage"};
-        this.state = {currentPageState: this.pageStates.DefaultPage};
+        this.state = {
+            currentPageState: this.pageStates.DefaultPage,
+            isMobile: true,
+        };
+
         this.currentOpenWork = null;
 
         this.onPageStateChangedCallback = [];
 
+        this.updatePredicate = this.updatePredicate.bind(this);
     };
 
     onAfterTitle(callback) {
         this.onAfterTitleCallbacks.push(callback);
     }
 
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updatePredicate);
+    }
+
+    updatePredicate() {
+        this.setState({isMobile: !(window.innerWidth < 1000)});
+    }
+
+    isMobile() {
+        return !this.state.isMobile;
+    }
+
     render() {
+        console.log(this.isMobile());
         return (
             <Container fluid style={{
                 minHeight: "100vh",
@@ -83,7 +105,7 @@ class App extends React.Component {
                 backgroundImage: 'url(' + layer + ') ,linear-gradient(45deg, #9f424c 15%, #5f4d93 85%)'
             }}>
                 <Container
-                    style={{height: "50vh"}}
+                    style={{height: this.isMobile() ? "25vh" : "50vh"}}
                     ref={this.title}
                 >
                     <Row style={{height: "100%"}}>
@@ -104,17 +126,30 @@ class App extends React.Component {
                     </Row>
                 </Container>
 
-                <Row className="justify-content-center">
+                <Row className="justify-content-center" style={{}}>
                     <Col xs={12} lg={12} xl={11} style={{maxWidth: 1450, padding: 0}}>
                         <Container fluid>
                             <Col className="header" style={{zIndex: 100}}>
                                 <HeaderBody app={this}/>
                             </Col>
                             <Col>
-                                <div style={{padding: 0}}>
-                                    <BodySection>
-                                        <IntroductionSection/>
-                                    </BodySection>
+                                <div>
+                                    {
+                                        this.isMobile() ?
+                                            (<BodySection key="first" style={{
+                                                    MozBorderRadiusTopleft: 10,
+                                                    MozBorderRadiusTopright: 10,
+                                                    WebkitBorderTopLeftRadius: 10,
+                                                    WebkitBorderTopRightRadius: 10
+                                                }}>
+                                                    <IntroductionSection app={this}/>
+                                                </BodySection>
+                                            ) : (
+                                                <BodySection key="second">
+                                                    <IntroductionSection app={this}/>
+                                                </BodySection>
+                                            )
+                                    }
 
                                     <BodySection>
                                         <WorkSection onProjectOpenend={this.openProject} app={this}
@@ -133,13 +168,13 @@ class App extends React.Component {
                                                    isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
                                     </BodySection>
                                 </div>
-                            </Col>
+                                < /Col>
                         </Container>
                     </Col>
                 </Row>
             </Container>
-        );
+    );
     }
-}
+    }
 
-export default App;
+    export default App;
