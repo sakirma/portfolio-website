@@ -22,29 +22,10 @@ function WorkModal(props) {
 
 class App extends React.Component {
     componentDidMount() {
-        this.handleStateChanged();
-
-        let io = new IntersectionObserver(
-            entries => {
-                let length = this.onAfterTitleCallbacks.length;
-                for (let i = 0; i < length; i++) {
-                    this.onAfterTitleCallbacks[i](entries[0]);
-                }
-            }
-        );
-
-        io.observe(this.title.current);
 
         this.updatePredicate();
         window.addEventListener("resize", this.updatePredicate);
     };
-
-    handleStateChanged() {
-        let length = this.onPageStateChangedCallback.length;
-        for (let i = 0; i < length; i++) {
-            this.onPageStateChangedCallback[i]();
-        }
-    }
 
     openProject(work, app) {
         app.setState({currentPageState: app.pageStates.ProjectPage});
@@ -62,8 +43,6 @@ class App extends React.Component {
         const {classes} = props;
         this.classes = classes;
 
-        this.title = React.createRef();
-
         this.onAfterTitleCallbacks = [];
 
         this.pageStates = {DefaultPage: "DefaultPage", ProjectPage: "ProjectPage"};
@@ -72,15 +51,29 @@ class App extends React.Component {
             isMobile: true,
         };
 
-        this.currentOpenWork = null;
-
-        this.onPageStateChangedCallback = [];
+        this.introduction = React.createRef();
+        this.proWork = React.createRef();
+        this.perWork = React.createRef();
+        //TODO: Contact.
 
         this.updatePredicate = this.updatePredicate.bind(this);
     };
 
     onAfterTitle(callback) {
         this.onAfterTitleCallbacks.push(callback);
+    }
+
+    scrollToSection(section) {
+        const offset = 45;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = section.current.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
     }
 
     componentWillUnmount() {
@@ -96,7 +89,6 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.isMobile());
         return (
             <Container fluid style={{
                 minHeight: "100vh",
@@ -128,43 +120,54 @@ class App extends React.Component {
                     <Col xs={12} lg={12} xl={11} style={{maxWidth: 1450, padding: 0}}>
                         <Container fluid>
                             <Col className="header" style={{zIndex: 100}}>
-                                <HeaderBody app={this}/>
+                                <HeaderBody app={this} intro={this.introduction} proWork={this.proWork}
+                                            perWork={this.perWork}/>
                             </Col>
                             <Col>
                                 <div>
                                     {
                                         this.isMobile() ?
-                                            (<BodySection key="first" style={{
-                                                    MozBorderRadiusTopleft: 10,
-                                                    MozBorderRadiusTopright: 10,
-                                                    WebkitBorderTopLeftRadius: 10,
-                                                    WebkitBorderTopRightRadius: 10
-                                                }}>
-                                                    <IntroductionSection app={this}/>
-                                                </BodySection>
+                                            (
+                                                <div ref={this.introduction}>
+                                                    <BodySection key="first" style={{
+                                                        MozBorderRadiusTopleft: 10,
+                                                        MozBorderRadiusTopright: 10,
+                                                        WebkitBorderTopLeftRadius: 10,
+                                                        WebkitBorderTopRightRadius: 10
+                                                    }}>
+                                                        <IntroductionSection app={this}/>
+                                                    </BodySection>
+                                                </div>
                                             ) : (
-                                                <BodySection key="second">
-                                                    <IntroductionSection app={this}/>
-                                                </BodySection>
+                                                <div ref={this.introduction}>
+                                                    <BodySection key="second">
+                                                        <IntroductionSection app={this}/>
+                                                    </BodySection>
+                                                </div>
                                             )
                                     }
 
-                                    <BodySection>
-                                        <WorkSection onProjectOpenend={this.openProject} app={this}
-                                                     work1={Projects.work1}
-                                                     work2={Projects.work2}
-                                                     work3={Projects.work3}/>
-                                        <WorkModal parent={this}
-                                                   isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
-                                    </BodySection>
-                                    <BodySection>
-                                        <WorkSection onProjectOpenend={this.openProject} app={this}
-                                                     work1={Projects.work4}
-                                                     work2={Projects.work2}
-                                                     work3={Projects.work3}/>
-                                        <WorkModal parent={this}
-                                                   isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
-                                    </BodySection>
+                                    <div ref={this.proWork}>
+                                        <BodySection>
+                                            <WorkSection onProjectOpenend={this.openProject} app={this}
+                                                         work1={Projects.work1}
+                                                         work2={Projects.work2}
+                                                         work3={Projects.work3}/>
+                                            <WorkModal parent={this}
+                                                       isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
+                                        </BodySection>
+                                    </div>
+
+                                    <div ref={this.perWork}>
+                                        <BodySection>
+                                            <WorkSection onProjectOpenend={this.openProject} app={this}
+                                                         work1={Projects.work4}
+                                                         work2={Projects.work2}
+                                                         work3={Projects.work3}/>
+                                            <WorkModal parent={this}
+                                                       isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
+                                        </BodySection>
+                                    </div>
                                 </div>
                             </Col>
                         </Container>
