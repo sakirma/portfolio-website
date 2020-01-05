@@ -16,19 +16,18 @@ const CustomH2 = styled.h2`
 `;
 
 class HeaderUnderline extends React.Component {
-    constructor(props)
-    {
+    constructor(props) {
         super(props);
 
 
-        const { classes } = props;
+        const {classes} = props;
         this.classes = classes;
     }
 
     render() {
         return (
             <CustomH2 className="headerUnderline">
-                { this.props.children }
+                {this.props.children}
             </CustomH2>
         )
     }

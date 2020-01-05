@@ -3,15 +3,15 @@ import WorkBase from "../WorkBase";
 import {Card, Carousel, Modal} from 'react-bootstrap';
 
 
-// import thumbnail from "./capitola-vr-logo-black.png";
+import thumbnail from "./React.png";
 
-class PortfolioWebsite extends WorkBase {
+export default class PortfolioWebsite extends WorkBase {
     constructor(props) {
         super(props);
 
-        // this.thumbnail = thumbnail;
-        this.titleName = "Capitola VR Digital";
-        this.description = "My internship at Capitola VR Digital, Virtual/Augmented Reality Developer";
+        this.thumbnail = thumbnail;
+        this.titleName = "Junk Food Mountain";
+        this.description = "First time with React";
     }
 
     getReactElement() {
@@ -24,3 +24,4 @@ class PortfolioWebsite extends WorkBase {
         </div>)
     }
 }
+

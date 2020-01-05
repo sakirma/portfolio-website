@@ -14,6 +14,7 @@ import IntroductionSection from "./Sections/IntroductionSection";
 import ProjectPage from "./Sections/ProjectPage";
 
 import Projects from "./Projects";
+import HeaderUnderline from "./Layout/HeaderUnderline";
 
 
 function WorkModal(props) {
@@ -149,12 +150,15 @@ class App extends React.Component {
 
                                     <div ref={this.proWork}>
                                         <BodySection>
-                                            <WorkSection onProjectOpenend={this.openProject} app={this}
-                                                         work1={Projects.work1}
-                                                         work2={Projects.work2}
-                                                         work3={Projects.work3}/>
-                                            <WorkModal parent={this}
-                                                       isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
+                                            <div style={{width: '100%', height: '100%'}}>
+                                                <HeaderUnderline> Professional Work </HeaderUnderline>
+                                                <WorkSection onProjectOpenend={this.openProject} app={this}
+                                                             work1={Projects.work1}
+                                                             work2={Projects.work2}
+                                                             work3={Projects.work3}/>
+                                                <WorkModal parent={this}
+                                                           isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
+                                            </div>
                                         </BodySection>
                                     </div>
 

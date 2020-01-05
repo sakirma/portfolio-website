@@ -6,25 +6,25 @@ import WorkThumbnail from "./WorkThumbnail"
 class WorkSection extends React.Component {
     render() {
         return (
-            <div style={{width: '100%', height: '100%'}}>
-                <HeaderUnderline> Work </HeaderUnderline>
-                <Container fluid>
-                    <Row className="text-center justify-content-center">
-                        <Col className="">
-                            <WorkThumbnail onProjectOpenend={() => this.props.onProjectOpenend(this.props.work1, this.props.app)}
-                                           work={this.props.work1}/>
-                        </Col>
-                        <Col>
-                            <WorkThumbnail onProjectOpenend={() => this.props.onProjectOpenend(this.props.work2, this.props.app)}
-                                           work={this.props.work2}/>
-                        </Col>
-                        <Col>
-                            <WorkThumbnail onProjectOpenend={() => this.props.onProjectOpenend(this.props.work3, this.props.app)}
-                                           work={this.props.work3}/>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+            <Container fluid>
+                <Row className="text-center justify-content-center">
+                    <Col className="">
+                        <WorkThumbnail
+                            onProjectOpenend={() => this.props.onProjectOpenend(this.props.work1, this.props.app)}
+                            work={this.props.work1}/>
+                    </Col>
+                    <Col>
+                        <WorkThumbnail
+                            onProjectOpenend={() => this.props.onProjectOpenend(this.props.work2, this.props.app)}
+                            work={this.props.work2}/>
+                    </Col>
+                    <Col>
+                        <WorkThumbnail
+                            onProjectOpenend={() => this.props.onProjectOpenend(this.props.work3, this.props.app)}
+                            work={this.props.work3}/>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 }

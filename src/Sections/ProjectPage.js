@@ -8,7 +8,8 @@ class ProjectPage extends React.Component {
 
         if (this.props.isActive) {
             return (<div>
-                <Modal show={true} onHide={() => parent.closeProject(parent)} centered size="lg" style={{overflowY: 'scroll'}}>
+                <Modal show={true} onHide={() => parent.closeProject(parent)} centered size="lg"
+                       style={{overflowY: 'scroll'}}>
                     {work.getReactElement()}
                     <Modal.Footer>
                         <Button variant="secondary" onClick={() => parent.closeProject(parent)}>
