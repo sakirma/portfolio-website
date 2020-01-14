@@ -118,7 +118,7 @@ class App extends React.Component {
                 </Container>
 
                 <Row className="justify-content-center" style={{}}>
-                    <Col xs={12} lg={12} xl={11} style={{maxWidth: 1450, padding: 0}}>
+                    <Col xs={12} lg={12} xl={10} style={{maxWidth: 1450, padding: 0}}>
                         <Container fluid>
                             <Col className="header" style={{zIndex: 100}}>
                                 <HeaderBody app={this} intro={this.introduction} proWork={this.proWork}
@@ -148,6 +148,9 @@ class App extends React.Component {
                                             )
                                     }
 
+                                    <WorkModal parent={this}
+                                               isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
+
                                     <div ref={this.proWork}>
                                         <BodySection>
                                             <div style={{width: '100%', height: '100%'}}>
@@ -156,8 +159,6 @@ class App extends React.Component {
                                                              work1={Projects.work1}
                                                              work2={Projects.work2}
                                                              work3={Projects.work3}/>
-                                                <WorkModal parent={this}
-                                                           isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
                                             </div>
                                         </BodySection>
                                     </div>
@@ -168,8 +169,6 @@ class App extends React.Component {
                                                          work1={Projects.work4}
                                                          work2={Projects.work2}
                                                          work3={Projects.work3}/>
-                                            <WorkModal parent={this}
-                                                       isActive={this.state.currentPageState === this.pageStates.ProjectPage}/>
                                         </BodySection>
                                     </div>
                                 </div>
