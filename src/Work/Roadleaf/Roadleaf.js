@@ -80,7 +80,7 @@ class Roadleaf extends WorkBase {
                                 Laravel
                             </li>
                             <li>
-                                Vue
+                                Vuejs
                             </li>
                             <li>
                                 Git
