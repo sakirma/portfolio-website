@@ -70,7 +70,7 @@ class BeestjeOpJeFeestje extends WorkBase {
                             </h2>
                         </Card.Title>
                         <Card.Text>
-                            I have made a website with ASP NET core and it is about renting animals for events. When an animal is booked the server will save this information in a SQL Database.
+                            I have made a website with ASP NET core and it is about renting animals for events. When an animal is booked the server will save this information in an SQL Database.
                         </Card.Text>
                         <Card.Title>
                             <h3>
