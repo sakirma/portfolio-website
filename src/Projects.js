@@ -2,6 +2,8 @@ import Bannerlord from './Work/Bannerlord/Bannerlord';
 import Roadleaf from './Work/Roadleaf/Roadleaf';
 import CapitolaVRDigital from "./Work/CapitolaVRDigital/CapitolaVRDigital";
 import Portfolio from "./Work/PortfolioWebsite/PortfolioWebsite";
+import RefactoringGuru from "./Work/RefactoringGuru/RefactoringGuru";
+import BeestjeOpJeFeestje from "./Work/BeestjeOpJeFeestje/BeestjeOpJeFeestje";
 
 let projects = {
     // Fav Work
@@ -10,6 +12,8 @@ let projects = {
     work3: new Roadleaf(),
 
     work4: new Portfolio(),
+    work5: new RefactoringGuru(),
+    work6: new BeestjeOpJeFeestje()
 };
 
 export default projects

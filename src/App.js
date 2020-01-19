@@ -55,7 +55,6 @@ class App extends React.Component {
         this.introduction = React.createRef();
         this.proWork = React.createRef();
         this.perWork = React.createRef();
-        //TODO: Contact.
 
         this.updatePredicate = this.updatePredicate.bind(this);
     };
@@ -165,10 +164,11 @@ class App extends React.Component {
 
                                     <div ref={this.perWork}>
                                         <BodySection>
+                                            <HeaderUnderline> Projects </HeaderUnderline>
                                             <WorkSection onProjectOpenend={this.openProject} app={this}
                                                          work1={Projects.work4}
-                                                         work2={Projects.work2}
-                                                         work3={Projects.work3}/>
+                                                         work2={Projects.work5}
+                                                         work3={Projects.work6}/>
                                         </BodySection>
                                     </div>
                                 </div>
