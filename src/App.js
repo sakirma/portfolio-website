@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Container, Col, Row
+    Container, Col, Row, Button, ButtonToolbar
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,6 +15,8 @@ import ProjectPage from "./Sections/ProjectPage";
 
 import Projects from "./Projects";
 import HeaderUnderline from "./Layout/HeaderUnderline";
+
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
 function WorkModal(props) {
@@ -176,17 +178,28 @@ class App extends React.Component {
                                     <div ref={this.contact}>
                                         <BodySection>
                                             <Container>
-                                                <Row className="justify-content-md-center">
-                                                    <HeaderUnderline alignment="center">Contact</HeaderUnderline>
+                                                <Row className="justify-content-center">
+                                                        <HeaderUnderline alignment="center">Contact</HeaderUnderline>
                                                 </Row>
-                                                <Row className="justify-content-md-center" style={{marginTop: "2em"}}>
-                                                    <Col xs={2}>
+                                                <Row className="justify-content-center text-center" style={{marginTop: "1em"}}>
+                                                    <Col xs={12} sm={3} style={{marginTop: "1em"}}>
                                                         <h5 className="font-weight-bold">Location</h5>
                                                         The Netherlands Leerdam
                                                     </Col>
-                                                    <Col xs={2}>
+                                                    <Col xs={12} sm={"auto"} style={{marginTop: "1em", marginRight: "1em"}}>
                                                         <h5 className="font-weight-bold">Email</h5>
                                                         Huseyincaliskan32@gmail.com
+                                                    </Col>
+                                                    <Col xs={12} sm={3} style={{whiteSpace: "nowrap", marginTop: "1em"}}>
+                                                            <Button className="btn-light" target="_blank"
+                                                                    href="https://github.com/sakirma">
+                                                                <i className="fab fa-3x fa-github-square"/>
+                                                            </Button>
+                                                            <Button className="btn-light"
+                                                                    target="_blank"
+                                                                    href="https://www.linkedin.com/in/huseyin-caliskan/">
+                                                                <i className="fab fa-3x fa-linkedin"/>
+                                                            </Button>
                                                     </Col>
                                                 </Row>
                                             </Container>
