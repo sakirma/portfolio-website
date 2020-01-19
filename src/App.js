@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Container, Col, Row,
+    Container, Col, Row
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -55,6 +55,7 @@ class App extends React.Component {
         this.introduction = React.createRef();
         this.proWork = React.createRef();
         this.perWork = React.createRef();
+        this.contact = React.createRef();
 
         this.updatePredicate = this.updatePredicate.bind(this);
     };
@@ -116,12 +117,12 @@ class App extends React.Component {
                     </Row>
                 </Container>
 
-                <Row className="justify-content-center" style={{}}>
+                <Row className="justify-content-center">
                     <Col xs={12} lg={12} xl={10} style={{maxWidth: 1450, padding: 0}}>
                         <Container fluid>
                             <Col className="header" style={{zIndex: 100}}>
                                 <HeaderBody app={this} intro={this.introduction} proWork={this.proWork}
-                                            perWork={this.perWork}/>
+                                            perWork={this.perWork} contact={this.contact}/>
                             </Col>
                             <Col>
                                 <div>
@@ -169,6 +170,26 @@ class App extends React.Component {
                                                          work1={Projects.work4}
                                                          work2={Projects.work5}
                                                          work3={Projects.work6}/>
+                                        </BodySection>
+                                    </div>
+
+                                    <div ref={this.contact}>
+                                        <BodySection>
+                                            <Container>
+                                                <Row className="justify-content-md-center">
+                                                    <HeaderUnderline alignment="center">Contact</HeaderUnderline>
+                                                </Row>
+                                                <Row className="justify-content-md-center" style={{marginTop: "2em"}}>
+                                                    <Col xs={2}>
+                                                        <h5 className="font-weight-bold">Location</h5>
+                                                        The Netherlands Leerdam
+                                                    </Col>
+                                                    <Col xs={2}>
+                                                        <h5 className="font-weight-bold">Email</h5>
+                                                        Huseyincaliskan32@gmail.com
+                                                    </Col>
+                                                </Row>
+                                            </Container>
                                         </BodySection>
                                     </div>
                                 </div>

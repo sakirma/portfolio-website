@@ -18,6 +18,7 @@ class HeaderBody extends React.Component {
         this.perWork = props.perWork;
         this.intro = props.intro;
         this.proWork = props.proWork;
+        this.contact = props.contact;
     }
 
     onAfterTitle(e) {
@@ -65,7 +66,7 @@ class HeaderBody extends React.Component {
                                               onClick={() => this.application.scrollToSection(this.proWork)}>Professional Work</ToggleButton>
                                 <ToggleButton variant="light" className="rounded mr-2" value={3}
                                               onClick={() => this.application.scrollToSection(this.perWork)}>Personal Work</ToggleButton>
-                                <ToggleButton variant="light" className="rounded" value={4}>Contact</ToggleButton>
+                                <ToggleButton variant="light" className="rounded" value={4} onClick={() => this.application.scrollToSection(this.contact)}>Contact</ToggleButton>
                             </ToggleButtonGroup>
                         </ButtonToolbar>
                     </Card>
