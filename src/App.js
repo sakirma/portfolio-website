@@ -186,11 +186,12 @@ class App extends React.Component {
                                                         <h5 className="font-weight-bold">Location</h5>
                                                         The Netherlands Leerdam
                                                     </Col>
-                                                    <Col xs={12} sm={"auto"} style={{marginTop: "1em", marginRight: "1em"}}>
+                                                    <Col xs={12} md={"auto"} style={{marginTop: "1em", marginRight: "1em"}}>
                                                         <h5 className="font-weight-bold">Email</h5>
                                                         Huseyincaliskan32@gmail.com
                                                     </Col>
-                                                    <Col xs={12} sm={3} style={{whiteSpace: "nowrap", marginTop: "1em"}}>
+                                                    <Col xs={12} sm={3} style={{whiteSpace: "nowrap", marginTop: "1em", maxWidth: "none"}}>
+                                                        <div>
                                                             <Button className="btn-light" target="_blank"
                                                                     href="https://github.com/sakirma">
                                                                 <i className="fab fa-3x fa-github-square"/>
@@ -200,6 +201,7 @@ class App extends React.Component {
                                                                     href="https://www.linkedin.com/in/huseyin-caliskan/">
                                                                 <i className="fab fa-3x fa-linkedin"/>
                                                             </Button>
+                                                        </div>
                                                     </Col>
                                                 </Row>
                                             </Container>
