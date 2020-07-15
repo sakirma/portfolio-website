@@ -25,7 +25,7 @@ export default class RefactoringGuru extends WorkBase {
             </Modal.Header>
             <Modal.Body style={{fontFamily: '"Source Sans Pro", sans-serif'}}>
                 <Card>
-                    <Carousel wrap={false} interval={false}>
+                    <Carousel wrap={false} interval={null}>
                         <Carousel.Item key={0}>
                             <img
                                 style={{margin: 'auto'}}

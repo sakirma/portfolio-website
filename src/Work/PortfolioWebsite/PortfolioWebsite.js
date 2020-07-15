@@ -29,7 +29,7 @@ export default class PortfolioWebsite extends WorkBase {
             </Modal.Header>
             <Modal.Body style={{fontFamily: '"Source Sans Pro", sans-serif'}}>
                 <Card>
-                    <Carousel wrap={false} interval={false}>
+                    <Carousel wrap={false} interval={null}>
                         <Carousel.Item key={0}>
                             <img
                                 className="d-block w-100"
@@ -108,6 +108,11 @@ export default class PortfolioWebsite extends WorkBase {
                                 Docker
                             </li>
                         </ul>
+                        <Card.Text>
+                            <Card.Link href="https://github.com/sakirma/portfolio-website" target="_blank">
+                                Repository
+                            </Card.Link>
+                        </Card.Text>
                     </Card.Body>
                 </Card>
             </Modal.Body>

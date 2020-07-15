@@ -13,7 +13,8 @@ let projects = {
 
     work4: new Portfolio(),
     work5: new RefactoringGuru(),
-    work6: new BeestjeOpJeFeestje()
+    work6: new BeestjeOpJeFeestje(),
+    work7: new BeestjeOpJeFeestje()
 };
 
 export default projects

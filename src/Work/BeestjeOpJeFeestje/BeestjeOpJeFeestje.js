@@ -29,7 +29,7 @@ class BeestjeOpJeFeestje extends WorkBase {
             </Modal.Header>
             <Modal.Body style={{fontFamily: '"Source Sans Pro", sans-serif'}}>
                 <Card>
-                    <Carousel  wrap={false} interval={false}>
+                    <Carousel  wrap={false} interval={null}>
                         <Carousel.Item key={0}>
                             <img
                                 style={{margin: "auto"}}
@@ -54,7 +54,7 @@ class BeestjeOpJeFeestje extends WorkBase {
                                 alt={animals}
                             />
                         </Carousel.Item>
-                        <Carousel.Item key={2}>
+                        <Carousel.Item key={3}>
                             <img
                                 style={{margin: "auto"}}
                                 className="d-block h-25"
@@ -99,7 +99,7 @@ class BeestjeOpJeFeestje extends WorkBase {
                             <h3>Resources</h3>
                         </Card.Title>
                         <Card.Text>
-                            <Card.Link href="https://github.com/sakirma/BeestjeOpJeFeestje/" target="_blank">
+                            <Card.Link href="https://github.com/sakirma/eindopdracht-prog6-1920-storm-en-huseyin/" target="_blank">
                                 Repository
                             </Card.Link>
                         </Card.Text>

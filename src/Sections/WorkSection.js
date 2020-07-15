@@ -5,24 +5,19 @@ import WorkThumbnail from "./WorkThumbnail"
 
 class WorkSection extends React.Component {
     render() {
+        console.log(this.props.works);
         return (
             <Container fluid>
                 <Row className="text-center justify-content-center">
-                    <Col className="">
-                        <WorkThumbnail
-                            onProjectOpenend={() => this.props.onProjectOpenend(this.props.work1, this.props.app)}
-                            work={this.props.work1}/>
-                    </Col>
-                    <Col>
-                        <WorkThumbnail
-                            onProjectOpenend={() => this.props.onProjectOpenend(this.props.work2, this.props.app)}
-                            work={this.props.work2}/>
-                    </Col>
-                    <Col>
-                        <WorkThumbnail
-                            onProjectOpenend={() => this.props.onProjectOpenend(this.props.work3, this.props.app)}
-                            work={this.props.work3}/>
-                    </Col>
+                    {
+                        this.props.works.map((value, index) => {
+                            return <Col key={index}>
+                                <WorkThumbnail
+                                    onProjectOpenend={() => this.props.onProjectOpenend(value, this.props.app)}
+                                    work={value}/>
+                            </Col>
+                        })
+                    }
                 </Row>
             </Container>
         )

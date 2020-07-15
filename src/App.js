@@ -158,9 +158,7 @@ class App extends React.Component {
                                             <div style={{width: '100%', height: '100%'}}>
                                                 <HeaderUnderline> Professional Work </HeaderUnderline>
                                                 <WorkSection onProjectOpenend={this.openProject} app={this}
-                                                             work1={Projects.work1}
-                                                             work2={Projects.work2}
-                                                             work3={Projects.work3}/>
+                                                             works={[Projects.work1, Projects.work2, Projects.work3]}/>
                                             </div>
                                         </BodySection>
                                     </div>
@@ -169,9 +167,7 @@ class App extends React.Component {
                                         <BodySection>
                                             <HeaderUnderline> Projects </HeaderUnderline>
                                             <WorkSection onProjectOpenend={this.openProject} app={this}
-                                                         work1={Projects.work4}
-                                                         work2={Projects.work5}
-                                                         work3={Projects.work6}/>
+                                                         works={[Projects.work4, Projects.work5, Projects.work6]}/>
                                         </BodySection>
                                     </div>
 
