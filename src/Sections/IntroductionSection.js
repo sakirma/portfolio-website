@@ -37,7 +37,7 @@ class IntroductionSection extends React.Component {
                                 <ul style={{'columnCount': 2, marginTop: '15px'}}>
                                     <li>C# & C++</li>
                                     <li>Java</li>
-                                    <li>JavaScript (ES6+)</li>
+                                    <li>JavaScript (ES6+) & Typescript</li>
                                     <li>HTML & (S)CSS</li>
                                     <li>React</li>
                                     <li>Vue</li>

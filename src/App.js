@@ -167,7 +167,7 @@ class App extends React.Component {
                                         <BodySection>
                                             <HeaderUnderline> Projects </HeaderUnderline>
                                             <WorkSection onProjectOpenend={this.openProject} app={this}
-                                                         works={[Projects.work4, Projects.work5, Projects.work6]}/>
+                                                         works={[Projects.work4, Projects.work5, Projects.work6, Projects.work7]}/>
                                         </BodySection>
                                     </div>
 

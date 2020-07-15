@@ -21,7 +21,7 @@ class CapitolaVRDigital extends WorkBase {
     render() {
         return(<div>
             <Modal.Header closeButton={true} className="text-center">
-                <Modal.Title>Roadleaf</Modal.Title>
+                <Modal.Title>Capitola VR Digital</Modal.Title>
             </Modal.Header>
             <Modal.Body style={{fontFamily: '"Source Sans Pro", sans-serif'}}>
                 <Card>
