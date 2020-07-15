@@ -13,8 +13,8 @@ class BeestjeOpJeFeestje extends WorkBase {
         super(props);
 
         this.thumbnail = thumbnail;
-        this.titleName = "Capitola VR Digital";
-        this.description = "My internship at Capitola VR Digital, Virtual/Augmented Reality Developer";
+        this.titleName = "Animal party";
+        this.description = "My first project with .NET Core";
     }
 
     getReactElement() {
