@@ -7,7 +7,7 @@ import thumbnail from "./Better-Trello-Logo.png";
 import pic1 from "./Annotation 2020-07-15 170025.png";
 import pic2 from "./Annotation 2020-07-15 170125.png";
 
-class CapitolaVRDigital extends WorkBase {
+class BetterTrello extends WorkBase {
     constructor(props) {
         super(props);
 
@@ -17,7 +17,7 @@ class CapitolaVRDigital extends WorkBase {
     }
 
     getReactElement() {
-        return <CapitolaVRDigital/>
+        return <BetterTrello/>
     }
 
     render() {
@@ -106,4 +106,4 @@ class CapitolaVRDigital extends WorkBase {
     }
 }
 
-export default CapitolaVRDigital;
+export default BetterTrello;
